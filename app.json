@@ -1,0 +1,9 @@
+{
+  "name": "Quarto-Arena",
+  "description": "An online version of Quarto - a fast-paced, two-player,
+                  strategic board game.",
+  "repository": "https://git.heroku.com/quarto-arena.git",
+  "logo": "none",
+  "keywords": ["quarto","online","game","ffrankies","board"],
+  "image": "heroku/nodejs"
+}
