@@ -1,0 +1,24 @@
+{
+  "name": "quarto-arena",
+  "version": "0.1.0",
+  "description": "An online version of Quarto - a fast-paced, two-player strategic board game.",
+  "main": "quarto-router.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node quarto-router.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/quarto-arena.git"
+  },
+  "keywords": [
+    "Quarto",
+    "game",
+    "board",
+    "multiplayer",
+    "online",
+    "ffrankies"
+  ],
+  "author": "ffrankies",
+  "license": "ISC"
+}
