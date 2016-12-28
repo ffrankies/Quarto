@@ -61,11 +61,12 @@ h1 {
   height: 70vh;
   transition: all 1s;
   background-color: #DCFEED;
-  background-image: -webkit-linear-gradient(34deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%), -webkit-linear-gradient(146deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%);
-  background-image: -o-linear-gradient(34deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%), -o-linear-gradient(146deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%);
-  background-image: -moz-linear-gradient(34deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%), -moz-linear-gradient(146deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%);
+  background-image: -webkit-linear-gradient(34deg, #125521, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%, #125521), -webkit-linear-gradient(146deg, #125521, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%, #125521);
+  background-image: -o-linear-gradient(34deg, #125521, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%, #125521), -o-linear-gradient(146deg, #125521, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%, #125521);
+  background-image: -moz-linear-gradient(34deg, #125521, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%, #125521), -moz-linear-gradient(146deg, #125521, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%, #125521);
   background-image: linear-gradient(34deg, #125521, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%, #125521), linear-gradient(146deg, #125521, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%, #125521);
-  background-size: 24vh 16vh; }
+  background-size: 24vh 16vh;
+  background-position: center; }
 
 .largeContainer {
   padding-top: 100vh; }

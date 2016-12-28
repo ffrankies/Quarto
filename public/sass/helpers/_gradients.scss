@@ -38,28 +38,37 @@
 @mixin crisscross($color1, $color2, $color3) {
     background-color: $color2;
     background-image: -webkit-linear-gradient(
-        34deg, transparent 20%, $color1 24%, $color1 26%, transparent 30%,
-        transparent 70%, $color1 74%, $color1 76%, transparent 80%),
+        34deg, $color3, transparent 20%, $color1 24%, $color1 26%,
+        transparent 30%, transparent 70%, $color1 74%, $color1 76%,
+        transparent 80%, $color3),
         -webkit-linear-gradient(
-        146deg, transparent 20%, $color1 24%, $color1 26%, transparent 30%,
-        transparent 70%, $color1 74%, $color1 76%, transparent 80%);
+        146deg, $color3, transparent 20%, $color1 24%, $color1 26%,
+        transparent 30%, transparent 70%, $color1 74%, $color1 76%,
+        transparent 80%, $color3);
     background-image: -o-linear-gradient(
-        34deg, transparent 20%, $color1 24%, $color1 26%, transparent 30%,
-        transparent 70%, $color1 74%, $color1 76%, transparent 80%),
+        34deg, $color3, transparent 20%, $color1 24%, $color1 26%,
+        transparent 30%, transparent 70%, $color1 74%, $color1 76%,
+        transparent 80%, $color3),
         -o-linear-gradient(
-        146deg, transparent 20%, $color1 24%, $color1 26%, transparent 30%,
-        transparent 70%, $color1 74%, $color1 76%, transparent 80%);
+        146deg, $color3, transparent 20%, $color1 24%, $color1 26%,
+        transparent 30%, transparent 70%, $color1 74%, $color1 76%,
+        transparent 80%, $color3);
     background-image: -moz-linear-gradient(
-        34deg, transparent 20%, $color1 24%, $color1 26%, transparent 30%,
-        transparent 70%, $color1 74%, $color1 76%, transparent 80%),
+        34deg, $color3, transparent 20%, $color1 24%, $color1 26%,
+        transparent 30%, transparent 70%, $color1 74%, $color1 76%,
+        transparent 80%, $color3),
         -moz-linear-gradient(
-        146deg, transparent 20%, $color1 24%, $color1 26%, transparent 30%,
-        transparent 70%, $color1 74%, $color1 76%, transparent 80%);
+        146deg, $color3, transparent 20%, $color1 24%, $color1 26%,
+        transparent 30%, transparent 70%, $color1 74%, $color1 76%,
+        transparent 80%, $color3);
     background-image: linear-gradient(
-        34deg, $color3, transparent 20%, $color1 24%, $color1 26%, transparent 30%,
-        transparent 70%, $color1 74%, $color1 76%, transparent 80%, $color3),
+        34deg, $color3, transparent 20%, $color1 24%, $color1 26%,
+        transparent 30%, transparent 70%, $color1 74%, $color1 76%,
+        transparent 80%, $color3),
         linear-gradient(
-        146deg, $color3, transparent 20%, $color1 24%, $color1 26%, transparent 30%,
-        transparent 70%, $color1 74%, $color1 76%, transparent 80%, $color3);
+        146deg, $color3, transparent 20%, $color1 24%, $color1 26%,
+        transparent 30%, transparent 70%, $color1 74%, $color1 76%,
+        transparent 80%, $color3);
     background-size: $scrnhgt * 0.24 $scrnhgt * 0.16;
+    background-position: center;
 }
