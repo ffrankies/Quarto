@@ -2,9 +2,6 @@
   margin: 0;
   padding: 0; }
 
-body {
-  background-color: #DCFEED; }
-
 #header {
   background: #125521;
   background: -webkit-linear-gradient(105deg, #125521, #21CC43);
@@ -48,20 +45,27 @@ h1 {
   line-height: 8vh; }
 
 #buttons {
-  text-align: right; }
+  text-align: right;
+  padding-right: 2em; }
 
 .button {
   display: inline-block;
-  font-size: 6vh;
-  line-height: 6vh;
+  font-size: 4vh;
+  line-height: 4vh;
   color: #DCFEED;
   text-shadow: 2px 2px 3px #125521;
   text-align: center;
-  padding: 2vh 0.5em 2vh 0.5em; }
+  padding: 3vh 0.5em 3vh 0.5em; }
 
 #container {
   height: 70vh;
-  transition: all 1s; }
+  transition: all 1s;
+  background-color: #DCFEED;
+  background-image: -webkit-linear-gradient(34deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%), -webkit-linear-gradient(146deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%);
+  background-image: -o-linear-gradient(34deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%), -o-linear-gradient(146deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%);
+  background-image: -moz-linear-gradient(34deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%), -moz-linear-gradient(146deg, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%);
+  background-image: linear-gradient(34deg, #125521, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%, #125521), linear-gradient(146deg, #125521, transparent 20%, white 24%, white 26%, transparent 30%, transparent 70%, white 74%, white 76%, transparent 80%, #125521);
+  background-size: 24vh 16vh; }
 
 .largeContainer {
   padding-top: 100vh; }
