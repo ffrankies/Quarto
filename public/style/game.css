@@ -19,11 +19,8 @@ body {
   background: linear-gradient(105deg, rgba(18, 85, 33, 0.75), rgba(33, 204, 67, 0.75));
   box-shadow: 0px 2px 5px #555555;
   transition: all 1s;
-  position: fixed;
-  width: 100vw; }
-
-.largeHeader {
-  height: 80vh; }
+  width: 100vw;
+  height: 20vh; }
 
 h1 {
   display: -webkit-flex;
@@ -38,20 +35,12 @@ h1 {
   justify-content: space-around;
   align-items: center;
   align-content: space-around;
-  font-size: 10em;
-  height: 73vh;
+  font-size: 9.1vh;
+  line-height: 9.1vh;
+  height: 13vh;
   color: #DCFEED;
   text-shadow: 2px 2px 5px #125521;
   transition: all 1s; }
-
-.shrinkHeader {
-  height: 20vh; }
-
-.shrinkH1 {
-  margin: 0;
-  height: 13vh;
-  font-size: 9.1vh;
-  line-height: 9.1vh; }
 
 #buttons {
   text-align: right;
@@ -67,15 +56,9 @@ h1 {
   padding: 2.1vh 0.5em 2.1vh 0.5em; }
 
 #container {
-  height: 73vh;
+  height: 13vh;
   transition: all 1s;
   background: transparent; }
-
-.largeContainer {
-  padding-top: 100vh; }
-
-.shrinkContainer {
-  padding-top: 50vh; }
 
 a, a:visited, a:link {
   text-decoration: none;
@@ -104,4 +87,4 @@ a, a:visited, a:link {
   box-shadow: 0px -2px 5px #555555;
   color: #DCFEED; }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=game.css.map */

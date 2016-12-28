@@ -9,10 +9,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Separate metas from header stuff-->
         <title>Quarto-Arena</title>
+        <link type="text/css" rel="styleshett" href="style/game.css"/>
+        <script src="scripts/quarto.js"></script>
     </head>
     <!--End of header section-->
     <body>
-        <h1>Quarto-Arena</h1>
+        <div id="header">
+            <div id="buttons">
+                <a class="button" id="log-in">Log In</a>
+                <a class="button" id="sign-up">Sign Up</a>
+            </div>
+            <h1>Quarto-Arena</h1>
+        </div>
         <div id="playerScores">
             <div id="player1">
                 Player1: 0
@@ -61,6 +69,9 @@
             <div class="cell"></div>
             <div class="cell"></div>
             <div class="cell"></div>
+        </div>
+        <div id="footer">
+            <a href="http://ffrankies.github.io">&copy; 2016 Frank Wanye</a>
         </div>
     </body>
 </html>
