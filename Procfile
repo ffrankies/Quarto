@@ -1,1 +1,1 @@
-web: node quarto-router.js
+web: node app.js

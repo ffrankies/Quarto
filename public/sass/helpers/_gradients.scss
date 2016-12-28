@@ -1,0 +1,7 @@
+@mixin linear-gradient($angle, $color1, $color2) {
+    background: $color1;
+    background: -webkit-linear-gradient($angle, $color1, $color2);
+    background: -o-linear-gradient($angle, $color1, $color2);
+    background: -moz-linear-gradient($angle, $color1, $color2);
+    background: linear-gradient($angle, $color1, $color2);
+}

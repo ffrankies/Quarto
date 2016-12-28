@@ -1,0 +1,94 @@
+@import "helpers/colors";
+@import "helpers/gradients";
+@import "helpers/functions";
+
+$scrnwdth: 100vw;
+$scrnhgt: 100vh;
+
+$hdrhght: 0.8 * $scrnhgt;
+$smallhdrhght: 0.2 * $scrnhgt;
+$h1hght: 0.7 * $scrnhgt;
+$smallh1hght: 0.1 * $scrnhgt;
+$smallh1fontsize: 0.8 * $smallh1hght;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $light-green;
+}
+
+#header {
+    @include linear-gradient(105deg, $dark-green, $green);
+    box-shadow: 0px 2px 5px $gray;
+    transition: all 1s;
+    position: fixed;
+    width: $scrnwdth;
+}
+
+.largeHeader {
+    height: $hdrhght;
+}
+
+h1 {
+    @include vertical-flexbox;
+    font-size: 10em;
+    height: $h1hght;
+    color: $light-green;
+    text-shadow: 2px 2px 5px $dark-green;
+    transition: all 1s;
+}
+
+.shrinkHeader {
+    height: $smallhdrhght;
+}
+
+.shrinkH1 {
+    margin: 0;
+    height: $smallh1hght;
+    font-size: $smallh1fontsize;
+    line-height: $smallh1fontsize;
+}
+
+#buttons {
+    text-align: right;
+}
+
+.button {
+    display: inline-block;
+    font-size: 0.6 * 0.1 * $scrnhgt;
+    line-height: 0.6 * 0.1 * $scrnhgt;
+    color: $light-green;
+    text-shadow: 2px 2px 3px  $dark-green;
+    text-align: center;
+    padding: 0.2 * 0.1 * $scrnhgt 0.5em 0.2 * 0.1 * $scrnhgt 0.5em;
+}
+
+#container {
+    height: $h1hght;
+    transition: all 1s;
+}
+
+.largeContainer {
+    padding-top: $scrnhgt;
+}
+
+.shrinkContainer {
+    padding-top: 350px;
+}
+
+a, a:visited, a:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+#footer {
+    height: 0.2 * $scrnhgt;
+    font-size: 3em;
+    @include vertical-flexbox;
+    @include linear-gradient(75deg, $dark-green, $green);
+    box-shadow: 0px -2px 5px $gray;
+    color: $light-green;
+}

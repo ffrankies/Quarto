@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #DCFEED; }
+
+#header {
+  background: #125521;
+  background: -webkit-linear-gradient(105deg, #125521, #21CC43);
+  background: -o-linear-gradient(105deg, #125521, #21CC43);
+  background: -moz-linear-gradient(105deg, #125521, #21CC43);
+  background: linear-gradient(105deg, #125521, #21CC43);
+  box-shadow: 0px 2px 5px #555555;
+  transition: all 1s;
+  position: fixed;
+  width: 100vw; }
+
+.largeHeader {
+  height: 80vh; }
+
+h1 {
+  display: -webkit-flex;
+  -webkit-flex: 1;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-align-content: space-around;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  font-size: 10em;
+  height: 70vh;
+  color: #DCFEED;
+  text-shadow: 2px 2px 5px #125521;
+  transition: all 1s; }
+
+.shrinkHeader {
+  height: 20vh; }
+
+.shrinkH1 {
+  margin: 0;
+  height: 10vh;
+  font-size: 8vh;
+  line-height: 8vh; }
+
+#buttons {
+  text-align: right; }
+
+.button {
+  display: inline-block;
+  font-size: 6vh;
+  line-height: 6vh;
+  color: #DCFEED;
+  text-shadow: 2px 2px 3px #125521;
+  text-align: center;
+  padding: 2vh 0.5em 2vh 0.5em; }
+
+#container {
+  height: 70vh;
+  transition: all 1s; }
+
+.largeContainer {
+  padding-top: 100vh; }
+
+.shrinkContainer {
+  padding-top: 350px; }
+
+a, a:visited, a:link {
+  text-decoration: none;
+  color: inherit; }
+
+#footer {
+  height: 20vh;
+  font-size: 3em;
+  display: -webkit-flex;
+  -webkit-flex: 1;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-align-content: space-around;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  background: #125521;
+  background: -webkit-linear-gradient(75deg, #125521, #21CC43);
+  background: -o-linear-gradient(75deg, #125521, #21CC43);
+  background: -moz-linear-gradient(75deg, #125521, #21CC43);
+  background: linear-gradient(75deg, #125521, #21CC43);
+  box-shadow: 0px -2px 5px #555555;
+  color: #DCFEED; }
+
+/*# sourceMappingURL=index.css.map */

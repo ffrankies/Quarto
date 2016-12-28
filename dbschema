@@ -1,0 +1,10 @@
+Players {
+    Username: text,
+    Password: text,
+    Games played: Number, 0,
+    Games won: Number, 0,
+    Games lost: Number, 0,
+    Rank: text, "beginner", "beginner" | "amateur" | "pro" | "expert" | "champ",
+    Position: 99999999,
+    Points: 0
+}
