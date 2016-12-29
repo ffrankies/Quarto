@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Separate metas from header stuff-->
         <title>Quarto-Arena</title>
-        <link type="text/css" rel="styleshett" href="style/game.css"/>
+        <link type="text/css" rel="stylesheet" href="style/game.css"/>
         <script src="scripts/quarto.js"></script>
     </head>
     <!--End of header section-->
@@ -19,56 +19,118 @@
                 <a class="button" id="log-in">Log In</a>
                 <a class="button" id="sign-up">Sign Up</a>
             </div>
-            <h1>Quarto-Arena</h1>
+            <h1><a href="index.html">Quarto-Arena</a></h1>
         </div>
-        <div id="playerScores">
-            <div id="player1">
-                Player1: 0
+        <div id="container">
+            <div id="notification">
+                Current Move: Player1. Select a piece for your opponent to
+                place.
             </div>
-            <div id="player2">
-                Player2: 0
+            <div id="game">
+                <div id="playerScores">
+                    <!-- <div id="scoresContainer"> -->
+                    <div id="playerbox">
+                        <div id="player1" class="info">
+                            Player1
+                        </div>
+                        <div id="player1score" class="info">
+                            0
+                        </div>
+                        <div id="player1rank" class="info">
+                            N/A
+                        </div>
+                        <hr />
+                        <div id="player2" class="info">
+                            Player2
+                        </div>
+                        <div id="player2score" class="info">
+                            0
+                        </div>
+                        <div id="player2rank" class="info">
+                            N/A
+                        </div>
+                        <hr />
+                        <a href="./game.html" class="info">New Game</a>
+                        <a href="./howto.html" class="info">Instructions</a>
+                        <a href="./leaderboard.html" class="info">
+                            Leaderboards
+                        </a>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div id="board">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+                <div id="pieces">
+                    <div id="piecesBox">
+                        <div class="piece">
+                            <div class="WBRO"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="WBRN"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="WBQO"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="WBQN"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="WSRO"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="WSRN"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="WSQO"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="WSQN"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="GBRO"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="GBRN"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="GBQO"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="GBQN"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="GSRO"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="GSRN"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="GSQO"></div>
+                        </div>
+                        <div class="piece">
+                            <div class="GSQN"></div>
+                        </div>
+                        <div class="piece selected"></div>
+                        <div id="selectedpiece"class="piece"></div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div id="notification">
-            Current Move: Player1. Select a piece for your opponent to place.
-        </div>
-        <div id="pieces1">
-            <div class="piece WBRO"></div>
-            <div class="piece WBRN"></div>
-            <div class="piece WBQO"></div>
-            <div class="piece WBQN"></div>
-            <div class="piece WSRO"></div>
-            <div class="piece WSRN"></div>
-            <div class="piece WSQO"></div>
-            <div class="piece WSQN"></div>
-        </div>
-        <div id="pieces2">
-            <div class="piece GBRO"></div>
-            <div class="piece GBRN"></div>
-            <div class="piece GBQO"></div>
-            <div class="piece GBQN"></div>
-            <div class="piece GSRO"></div>
-            <div class="piece GSRN"></div>
-            <div class="piece GSQO"></div>
-            <div class="piece GSQN"></div>
-        </div>
-        <div id="board">
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
         </div>
         <div id="footer">
             <a href="http://ffrankies.github.io">&copy; 2016 Frank Wanye</a>

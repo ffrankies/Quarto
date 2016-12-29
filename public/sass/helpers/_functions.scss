@@ -5,10 +5,77 @@
     -webkit-justify-content: space-around;
     -webkit-align-items: center;
     -webkit-align-content: space-around;
+    -webkit-flex-wrap: wrap;
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     align-content: space-around;
+    flex-wrap: wrap;
+}
+
+@mixin vertical-columns {
+    display: -webkit-flex;
+    -webkit-flex: 1;
+    -webkit-flex-direction: column;
+    -webkit-justify-content: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-align-content: space-around;
+    -webkit-flex-wrap: wrap;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+@mixin horizontal-flexbox {
+    display: -webkit-flex;
+    -webkit-flex: 1;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: space-around;
+    -webkit-align-items: center;
+    -webkit-align-content: space-around;
+    -webkit-flex-wrap: wrap;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+@mixin absoluteSize($width, $height) {
+    width: $width;
+    max-width: $width;
+    min-width: $width;
+    height: $height;
+    max-height: $height;
+    min-height: $height;
+}
+
+@mixin shape($color, $size, $shape, $outline) {
+    $color: transparentize($color, 0.4);
+    background-color: $color;
+    @if $size == big {
+        @include absoluteSize(80%, 80%);
+    } @else {
+        @include absoluteSize(50%, 50%);
+    }
+    @if $shape == circle {
+        border-radius: 50%;
+    } @else {
+        border-radius: none;
+    }
+    @if $outline == true {
+        $bordercolor: transparentize($dark-green, 0.2);
+        border: 2px solid $bordercolor;
+    } @else {
+        border: none;
+    }
+    box-shadow: 0px 0px 2px $black;
 }

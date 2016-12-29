@@ -5,9 +5,20 @@
 $scrnwdth: 100vw;
 $scrnhgt: 100vh;
 
-$hdrhght: 0.2 * $scrnhgt;
-$h1hght: 0.13 * $scrnhgt;
+$hdrhght: 0.16 * $scrnhgt;
+$h1hght: 0.10 * $scrnhgt;
 $h1fontsize: 0.7 * $h1hght;
+$containerhght: 0.77 * $scrnhgt;
+$noticeheight: 0.07 * $scrnhgt;
+$noticefntsize: 0.6 * $noticeheight;
+$ftrhght: 0.06 * $scrnhgt;
+$boardsize: $containerhght - $noticeheight;
+$freespace: calc($scrnwdth - $boardsize);
+$sidebarwdth: $freespace / 2;
+$piecesize: $boardsize / 6;
+$pieceinteriorsize: $piecesize * 0.94;
+$cellsize: $boardsize / 4;
+$cellinteriorsize: $cellsize * 0.94;
 
 * {
     margin: 0;
@@ -23,7 +34,7 @@ body {
     @include linear-gradient(105deg, $dark-green, $green);
     box-shadow: 0px 2px 5px $gray;
     transition: all 1s;
-    width: $scrnwdth;
+    max-width: $scrnwdth;
     height: $hdrhght;
 }
 
@@ -40,34 +51,224 @@ h1 {
 #buttons {
     text-align: right;
     padding-right: 2em;
+    max-width: $scrnwdth;
 }
 
 .button {
     display: inline-block;
-    font-size: 0.4 * 0.07 * $scrnhgt;
-    line-height: 0.4 * 0.07 * $scrnhgt;
+    font-size: 0.4 * 0.06 * $scrnhgt;
+    line-height: 0.4 * 0.06 * $scrnhgt;
     color: $light-green;
     text-shadow: 2px 2px 3px  $dark-green;
     text-align: center;
-    padding: 0.3 * 0.07 * $scrnhgt 0.5em 0.3 * 0.07 * $scrnhgt 0.5em;
+    padding: 0.3 * 0.06 * $scrnhgt 0.5em 0.3 * 0.06 * $scrnhgt 0.5em;
+}
+
+.button:hover {
+    color: $dark-green;
+}
+
+.button:active {
+    color: $dark-green;
+    text-shadow: -1px -1px 2px $black;
 }
 
 #container {
-    height: $h1hght;
+    height: $containerhght;
     transition: all 1s;
+    $bgcolor: transparentize($light-green, 0.3);
+    background-color: $bgcolor;
+    padding-bottom: 0.01 * $scrnhgt;
+}
+
+#notification {
+    height: $noticeheight;
+    color: $dark-green;
+    @include vertical-flexbox;
+    font-size: $noticefntsize;
     background: transparent;
+}
+
+#game {
+    @include horizontal-flexbox;
+    height: $boardsize;
+}
+
+#playerScores {
+    @include vertical-flexbox;
+    height: 0.8 * $boardsize;
+    width: $sidebarwdth;
+}
+
+#playerbox {
+    width: 50%;
+    border-radius: 10px;
+    margin-left: 30%;
+    padding-top: 0.04 * $boardsize;
+    padding-bottom: 0.04 * $boardsize;
+    box-shadow: 2px 2px 5px $gray;
+}
+
+hr {
+    width: 80%;
+    $hrcolor: transparentize($dark-green, 0.2);
+    border-top: 1px solid $hrcolor;
+    border-bottom: none;
+    margin: 0 10%;
+    box-shadow: 0px 0px 2px $gray;
+}
+
+.info {
+    @include vertical-flexbox;
+    height: 0.08 * $boardsize;
+    font-size: 0.05 * $boardsize;
+    color: $dark-green;
+}
+
+#board {
+    @include horizontal-flexbox;
+    min-height: $boardsize;
+    height: $boardsize;
+    min-width: $boardsize;
+    width: $boardsize;
+}
+
+.cell {
+    @include vertical-flexbox;
+    @include absoluteSize($cellinteriorsize, $cellinteriorsize);
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px $gray;
+}
+
+#pieces {
+    @include vertical-flexbox;
+    height: $boardsize;
+    width: $sidebarwdth;
+}
+
+#piecesBox {
+    @include vertical-columns;
+    width: 50%;
+    margin-right: 30%;
+    height: $boardsize;
+    max-height: $boardsize;
+}
+
+.piece {
+    @include absoluteSize($pieceinteriorsize, $pieceinteriorsize);
+    @include vertical-flexbox;
+    margin: $piecesize * 0.03;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px $gray;
+}
+
+.piece:hover, .cell:hover {
+    $hovercolor: transparentize($dark-green, 0.8);
+    background-color: $hovercolor;
+}
+
+.piece:active, .cell:active {
+    $hovercolor: transparentize($dark-green, 0.6);
+    background-color: $hovercolor;
+    box-shadow: -2px -2px 5px $gray;
 }
 
 a, a:visited, a:link {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
+}
+
+a.info {
+    color: $dark-green;
+}
+
+a.info:hover {
+    $hovercolor: transparentize($dark-green, 0.8);
+    background-color: $hovercolor;
+}
+
+a.info:active {
+    $hovercolor: transparentize($dark-green, 0.5);
+    background-color: $hovercolor;
 }
 
 #footer {
-    height: 0.15 * $scrnhgt;
-    font-size: 3em;
+    height: $ftrhght;
+    font-size: 0.5 * $ftrhght;
     @include vertical-flexbox;
     @include linear-gradient(75deg, $dark-green, $green);
-    box-shadow: 0px -2px 5px $gray;
     color: $light-green;
+    text-shadow: 2px 2px 5px $dark-green;
+}
+
+.WBRO {
+    @include shape(white, big, circle, true);
+}
+
+.WBRN {
+    @include shape(white, big, circle, false);
+}
+
+.WBQO {
+    @include shape(white, big, square, true);
+}
+
+.WBQN {
+    @include shape(white, big, square, false);
+}
+
+.WSRO {
+    @include shape(white, small, circle, true);
+}
+
+.WSRN {
+    @include shape(white, small, circle, false);
+}
+
+.WSQO {
+    @include shape(white, small, square, true);
+}
+
+.WSQN {
+    @include shape(white, small, square, false);
+}
+
+.GBRO {
+    @include shape($green, big, circle, true);
+}
+
+.GBRN {
+    @include shape($green, big, circle, false);
+}
+
+.GBQO {
+    @include shape($green, big, square, true);
+}
+
+.GBQN {
+    @include shape($green, big, square, false);
+}
+
+.GSRO {
+    @include shape($green, small, circle, true);
+}
+
+.GSRN {
+    @include shape($green, small, circle, false);
+}
+
+.GSQO {
+    @include shape($green, small, square, true);
+}
+
+.GSQN {
+    @include shape($green, small, square, false);
+}
+
+.selected {
+    $bgcolor: transparentize($dark-green, 0.4);
+    background-color: $bgcolor;
+    box-shadow: none;
 }
