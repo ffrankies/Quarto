@@ -62,7 +62,7 @@
     $color: transparentize($color, 0.4);
     background-color: $color;
     @if $size == big {
-        @include absoluteSize(80%, 80%);
+        @include absoluteSize(75%, 75%);
     } @else {
         @include absoluteSize(50%, 50%);
     }
@@ -73,7 +73,7 @@
     }
     @if $outline == true {
         $bordercolor: transparentize($dark-green, 0.2);
-        border: 2px solid $bordercolor;
+        border: 5px solid $bordercolor;
     } @else {
         border: none;
     }

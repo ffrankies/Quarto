@@ -88,8 +88,34 @@ h1 {
   align-items: center;
   align-content: space-around;
   flex-wrap: wrap;
-  font-size: 4.2vh;
   background: transparent; }
+
+h2 {
+  color: inherit;
+  font-size: 4.2vh;
+  display: -webkit-flex;
+  -webkit-flex: 1;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-align-content: space-around;
+  -webkit-flex-wrap: wrap;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+  width: auto;
+  max-width: auto;
+  min-width: auto;
+  height: 80%;
+  max-height: 80%;
+  min-height: 80%;
+  padding: 0 2em;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #555555; }
 
 #game {
   display: -webkit-flex;
@@ -175,10 +201,12 @@ hr {
   align-items: center;
   align-content: space-around;
   flex-wrap: wrap;
-  min-height: 70vh;
-  height: 70vh;
+  width: 70vh;
+  max-width: 70vh;
   min-width: 70vh;
-  width: 70vh; }
+  height: 70vh;
+  max-height: 70vh;
+  min-height: 70vh; }
 
 .cell {
   display: -webkit-flex;
@@ -275,6 +303,10 @@ hr {
   background-color: rgba(18, 85, 33, 0.4);
   box-shadow: -2px -2px 5px #555555; }
 
+#selectedpiece:hover, #selectedpiece:active {
+  background-color: transparent;
+  box-shadow: 2px 2px 5px #555555; }
+
 a, a:visited, a:link {
   text-decoration: none;
   color: inherit;
@@ -316,48 +348,48 @@ a.info:active {
 
 .WBRO {
   background-color: rgba(255, 255, 255, 0.6);
-  width: 80%;
-  max-width: 80%;
-  min-width: 80%;
-  height: 80%;
-  max-height: 80%;
-  min-height: 80%;
+  width: 75%;
+  max-width: 75%;
+  min-width: 75%;
+  height: 75%;
+  max-height: 75%;
+  min-height: 75%;
   border-radius: 50%;
-  border: 2px solid rgba(18, 85, 33, 0.8);
+  border: 5px solid rgba(18, 85, 33, 0.8);
   box-shadow: 0px 0px 2px #111111; }
 
 .WBRN {
   background-color: rgba(255, 255, 255, 0.6);
-  width: 80%;
-  max-width: 80%;
-  min-width: 80%;
-  height: 80%;
-  max-height: 80%;
-  min-height: 80%;
+  width: 75%;
+  max-width: 75%;
+  min-width: 75%;
+  height: 75%;
+  max-height: 75%;
+  min-height: 75%;
   border-radius: 50%;
   border: none;
   box-shadow: 0px 0px 2px #111111; }
 
 .WBQO {
   background-color: rgba(255, 255, 255, 0.6);
-  width: 80%;
-  max-width: 80%;
-  min-width: 80%;
-  height: 80%;
-  max-height: 80%;
-  min-height: 80%;
+  width: 75%;
+  max-width: 75%;
+  min-width: 75%;
+  height: 75%;
+  max-height: 75%;
+  min-height: 75%;
   border-radius: none;
-  border: 2px solid rgba(18, 85, 33, 0.8);
+  border: 5px solid rgba(18, 85, 33, 0.8);
   box-shadow: 0px 0px 2px #111111; }
 
 .WBQN {
   background-color: rgba(255, 255, 255, 0.6);
-  width: 80%;
-  max-width: 80%;
-  min-width: 80%;
-  height: 80%;
-  max-height: 80%;
-  min-height: 80%;
+  width: 75%;
+  max-width: 75%;
+  min-width: 75%;
+  height: 75%;
+  max-height: 75%;
+  min-height: 75%;
   border-radius: none;
   border: none;
   box-shadow: 0px 0px 2px #111111; }
@@ -371,7 +403,7 @@ a.info:active {
   max-height: 50%;
   min-height: 50%;
   border-radius: 50%;
-  border: 2px solid rgba(18, 85, 33, 0.8);
+  border: 5px solid rgba(18, 85, 33, 0.8);
   box-shadow: 0px 0px 2px #111111; }
 
 .WSRN {
@@ -395,7 +427,7 @@ a.info:active {
   max-height: 50%;
   min-height: 50%;
   border-radius: none;
-  border: 2px solid rgba(18, 85, 33, 0.8);
+  border: 5px solid rgba(18, 85, 33, 0.8);
   box-shadow: 0px 0px 2px #111111; }
 
 .WSQN {
@@ -412,48 +444,48 @@ a.info:active {
 
 .GBRO {
   background-color: rgba(33, 204, 67, 0.6);
-  width: 80%;
-  max-width: 80%;
-  min-width: 80%;
-  height: 80%;
-  max-height: 80%;
-  min-height: 80%;
+  width: 75%;
+  max-width: 75%;
+  min-width: 75%;
+  height: 75%;
+  max-height: 75%;
+  min-height: 75%;
   border-radius: 50%;
-  border: 2px solid rgba(18, 85, 33, 0.8);
+  border: 5px solid rgba(18, 85, 33, 0.8);
   box-shadow: 0px 0px 2px #111111; }
 
 .GBRN {
   background-color: rgba(33, 204, 67, 0.6);
-  width: 80%;
-  max-width: 80%;
-  min-width: 80%;
-  height: 80%;
-  max-height: 80%;
-  min-height: 80%;
+  width: 75%;
+  max-width: 75%;
+  min-width: 75%;
+  height: 75%;
+  max-height: 75%;
+  min-height: 75%;
   border-radius: 50%;
   border: none;
   box-shadow: 0px 0px 2px #111111; }
 
 .GBQO {
   background-color: rgba(33, 204, 67, 0.6);
-  width: 80%;
-  max-width: 80%;
-  min-width: 80%;
-  height: 80%;
-  max-height: 80%;
-  min-height: 80%;
+  width: 75%;
+  max-width: 75%;
+  min-width: 75%;
+  height: 75%;
+  max-height: 75%;
+  min-height: 75%;
   border-radius: none;
-  border: 2px solid rgba(18, 85, 33, 0.8);
+  border: 5px solid rgba(18, 85, 33, 0.8);
   box-shadow: 0px 0px 2px #111111; }
 
 .GBQN {
   background-color: rgba(33, 204, 67, 0.6);
-  width: 80%;
-  max-width: 80%;
-  min-width: 80%;
-  height: 80%;
-  max-height: 80%;
-  min-height: 80%;
+  width: 75%;
+  max-width: 75%;
+  min-width: 75%;
+  height: 75%;
+  max-height: 75%;
+  min-height: 75%;
   border-radius: none;
   border: none;
   box-shadow: 0px 0px 2px #111111; }
@@ -467,7 +499,7 @@ a.info:active {
   max-height: 50%;
   min-height: 50%;
   border-radius: 50%;
-  border: 2px solid rgba(18, 85, 33, 0.8);
+  border: 5px solid rgba(18, 85, 33, 0.8);
   box-shadow: 0px 0px 2px #111111; }
 
 .GSRN {
@@ -491,7 +523,7 @@ a.info:active {
   max-height: 50%;
   min-height: 50%;
   border-radius: none;
-  border: 2px solid rgba(18, 85, 33, 0.8);
+  border: 5px solid rgba(18, 85, 33, 0.8);
   box-shadow: 0px 0px 2px #111111; }
 
 .GSQN {
@@ -506,7 +538,7 @@ a.info:active {
   border: none;
   box-shadow: 0px 0px 2px #111111; }
 
-.selected {
+.selected, .selected:hover, .selected:active {
   background-color: rgba(18, 85, 33, 0.6);
   box-shadow: none; }
 

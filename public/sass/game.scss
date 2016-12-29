@@ -85,8 +85,17 @@ h1 {
     height: $noticeheight;
     color: $dark-green;
     @include vertical-flexbox;
-    font-size: $noticefntsize;
     background: transparent;
+}
+
+h2 {
+    color: inherit;
+    font-size: $noticefntsize;
+    @include vertical-flexbox;
+    @include absoluteSize(auto, 80%);
+    padding: 0 2em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px $gray;
 }
 
 #game {
@@ -127,10 +136,7 @@ hr {
 
 #board {
     @include horizontal-flexbox;
-    min-height: $boardsize;
-    height: $boardsize;
-    min-width: $boardsize;
-    width: $boardsize;
+    @include absoluteSize($boardsize, $boardsize);
 }
 
 .cell {
@@ -155,7 +161,7 @@ hr {
     max-height: $boardsize;
 }
 
-.piece {
+.piece, {
     @include absoluteSize($pieceinteriorsize, $pieceinteriorsize);
     @include vertical-flexbox;
     margin: $piecesize * 0.03;
@@ -172,6 +178,11 @@ hr {
     $hovercolor: transparentize($dark-green, 0.6);
     background-color: $hovercolor;
     box-shadow: -2px -2px 5px $gray;
+}
+
+#selectedpiece:hover, #selectedpiece:active {
+    background-color: transparent;
+    box-shadow: 2px 2px 5px $gray;
 }
 
 a, a:visited, a:link {
@@ -267,7 +278,7 @@ a.info:active {
     @include shape($green, small, square, false);
 }
 
-.selected {
+.selected, .selected:hover, .selected:active {
     $bgcolor: transparentize($dark-green, 0.4);
     background-color: $bgcolor;
     box-shadow: none;
