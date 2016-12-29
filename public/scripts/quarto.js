@@ -1,4 +1,9 @@
-"use strict";
+/******************************************************************************
+ * The Quarto Game Board logic.
+ * Author: Frank Wanye
+ * Date: 12/29/2016
+ *****************************************************************************/"
+ use strict";
 
 // Holds the Game Board and Pieces arrays
 var board = null;
@@ -56,7 +61,7 @@ function posToIndex(pos) {
  * Returns true if this is the first turn of the game.
  * Checks for first turn by looking at number of empty board cells. - WRONG
  */
-function firstTurn(board) {
+function firstTurn() {
     return (board.numEmpty() == 16);
 };
 
@@ -65,6 +70,10 @@ function firstTurn(board) {
  */
 function isWinner() {
     // TO-DO;
+    if (board.isWinner() === true) {
+        selectId("notification").innerHTML =
+            "<h2>Current Player has won!</h2>";
+    }
 };
 
 /**
@@ -83,7 +92,7 @@ function selectPiece(index) {
         var selected = board.selectPiece(index);
         if (selected) {
             var pieceDiv = selectOne(selectId("piecesBox"), selected);
-            pieceDiv.className += " selected";
+            pieceDiv.parentElement.className += " selected";
             selectId("selectedpiece").innerHTML = "<div class='" +
                 selected + "'></div>";
             nextTurn();
@@ -111,6 +120,7 @@ function placePiece(index) {
             var selectedDiv = selectId("selectedpiece");
             cell.innerHTML = selectedDiv.innerHTML;
             selectedDiv.innerHTML = "";
+            isWinner();
         } else {
             alert("Either there is no piece to place here, or there is " +
                   "already a piece placed here.");

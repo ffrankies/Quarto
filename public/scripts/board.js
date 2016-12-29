@@ -1,7 +1,7 @@
 /******************************************************************************
  * The 4 x 4 Quarto Game Board Class.
  * Author: Frank Wanye
- * Date: 12/28/2016
+ * Date: 12/29/2016
  *****************************************************************************/
 "use strict";
 
@@ -62,6 +62,156 @@ var Board = (function() {
         // The currently selected piece
         var selected = null;
 
+        /*
+         * The counters for each row/column/diagonal and property of
+         * QUARTO pieces. When any property gets to 4 or -4, then
+         * a player has won.
+         * Structure: Row/Column/Dag | Color | Size | Shape | outline
+         *                   1       |  val | val  |  val  |   val
+         *                 ...      | ...  |  ... |  ...  |   ...
+         */
+        var counterRows = [
+            [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]
+        ]
+
+        var counterCols = [
+            [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]
+        ]
+
+        var counterDiags = [
+            [0, 0, 0, 0], [0, 0, 0, 0]
+        ]
+
+        // Holds the largest value counter
+        var maxCounter = 0;
+
+        /**
+         * Updates the row counters given a position.
+         */
+        var updateRowCounters = function(row) {
+            if (selected[0] == 'W') {
+                counterRows[row][0]++;
+            } else {
+                counterRows[row][0]--;
+            }
+            if (Math.abs(counterRows[row][0]) > maxCounter) {
+                maxCounter = Math.abs(counterRows[row][0]);
+            }
+            if (selected[1] == 'B') {
+                counterRows[row][1]++;
+            } else {
+                counterRows[row][1]--;
+            }
+            if (Math.abs(counterRows[row][1]) > maxCounter) {
+                maxCounter = Math.abs(counterRows[row][1]);
+            }
+            if (selected[2] == 'R') {
+                counterRows[row][2]++;
+            } else {
+                counterRows[row][2]--;
+            }
+            if (Math.abs(counterRows[row][2]) > maxCounter) {
+                maxCounter = Math.abs(counterRows[row][2]);
+            }
+            if (selected[3] == 'O') {
+                counterRows[row][3]++;
+            } else {
+                counterRows[row][3]--;
+            }
+            if (Math.abs(counterRows[row][3]) > maxCounter) {
+                maxCounter = Math.abs(counterRows[row][3]);
+            }
+        };
+
+        /**
+         * Updates the column counters given a position.
+         */
+        var updateColCounters = function(col) {
+            if (selected[0] == 'W') {
+                counterCols[col][0]++;
+            } else {
+                counterCols[col][0]--;
+            }
+            if (Math.abs(counterCols[col][0]) > maxCounter) {
+                maxCounter = Math.abs(counterCols[col][0]);
+            }
+            if (selected[1] == 'B') {
+                counterCols[col][1]++;
+            } else {
+                counterCols[col][1]--;
+            }
+            if (Math.abs(counterCols[col][1]) > maxCounter) {
+                maxCounter = Math.abs(counterCols[col][1]);
+            }
+            if (selected[2] == 'R') {
+                counterCols[col][2]++;
+            } else {
+                counterCols[col][2]--;
+            }
+            if (Math.abs(counterCols[col][2]) > maxCounter) {
+                maxCounter = Math.abs(counterCols[col][2]);
+            }
+            if (selected[3] == 'O') {
+                counterCols[col][3]++;
+            } else {
+                counterCols[col][3]--;
+            }
+            if (Math.abs(counterCols[col][3]) > maxCounter) {
+                maxCounter = Math.abs(counterCols[col][3]);
+            }
+        };
+
+        /**
+         * Updates the row counters given a position.
+         */
+        var updateDiagCounters = function(diag) {
+            if (selected[0] == 'W') {
+                counterDiags[diag][0]++;
+            } else {
+                counterDiags[diag][0]--;
+            }
+            if (Math.abs(counterDiags[diag][0]) > maxCounter) {
+                maxCounter = Math.abs(counterDiags[diag][0]);
+            }
+            if (selected[1] == 'B') {
+                counterDiags[diag][1]++;
+            } else {
+                counterDiags[diag][1]--;
+            }
+            if (Math.abs(counterDiags[diag][1]) > maxCounter) {
+                maxCounter = Math.abs(counterDiags[diag][1]);
+            }
+            if (selected[2] == 'R') {
+                counterDiags[diag][2]++;
+            } else {
+                counterDiags[diag][2]--;
+            }
+            if (Math.abs(counterDiags[diag][2]) > maxCounter) {
+                maxCounter = Math.abs(counterDiags[diag][2]);
+            }
+            if (selected[3] == 'O') {
+                counterDiags[diag][3]++;
+            } else {
+                counterDiags[diag][3]--;
+            }
+            if (Math.abs(counterDiags[diag][3]) > maxCounter) {
+                maxCounter = Math.abs(counterDiags[diag][3]);
+            }
+        };
+
+        /**
+         * Updates all the counters.
+         */
+        var updateCounters = function(row, col) {
+            updateRowCounters(row);
+            updateColCounters(col);
+            if (row == col) {
+                updateDiagCounters(0);
+            } else if (row + col == 3) {
+                updateDiagCounters(1);
+            }
+        };
+
         /**
          * Sets up a new, empty board
          */
@@ -111,6 +261,18 @@ var Board = (function() {
         };
 
         /**
+         * Returns maxCounter if there is no winner, returns true if
+         * there is a Winner.
+         */
+        var isWinner = function() {
+            if (maxCounter == 4) {
+                return true;
+            } else {
+                return maxCounter;
+            }
+        };
+
+        /**
          * Places the currently selected Piece in the given cell.
          * Returns true if successful, false otherwise.
          */
@@ -125,6 +287,7 @@ var Board = (function() {
                 console.log("There is no selected Piece to place.");
                 return false;
             }
+            updateCounters(row, col);
             board[row][col] = selected;
             selected = null;
             return true;
@@ -136,7 +299,8 @@ var Board = (function() {
             numEmpty: numEmpty,
             pieces: pieces,
             selectPiece: selectPiece,
-            placePiece: placePiece
+            placePiece: placePiece,
+            isWinner: isWinner
         };
 
     };

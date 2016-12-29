@@ -1,6 +1,6 @@
 {
   "name": "quarto-arena",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "An online version of Quarto - a fast-paced, two-player strategic board game.",
   "main": "app.js",
   "scripts": {
