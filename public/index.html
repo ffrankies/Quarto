@@ -19,17 +19,71 @@
                 <a class="button" id="log-in">Log In</a>
                 <a class="button" id="sign-up">Sign Up</a>
             </div>
+            <div id="logo" class="logoLarge">Q</div>
             <h1>Quarto-Arena</h1>
         </div>
         <div id="container" class="largeContainer">
-            <h2>Welcome to the Quarto Arena! This site is still in development.</h2>
-            <h3>Quarto is a fast-paced, two-player strategic board game, similar to
-                tic-tac-toe. The game consists of a 4x4 game board, as well as a
-                common pool of 16 unique pieces. The game objective of the game
-                is to line up 4 pieces that have something in common.</h3>
-            <h4><a href="./game.html">Start Game</a></h4>
-            <h4><a href="./howto.html">Instructions</a></h4>
-            <h4><a href="./leaderboard.html">Leaderboards</a></h4>
+            <div id="card">
+                <h2>Welcome to the Quarto Arena! This site is still in
+                     development.</h2>
+                <h3>Quarto is a fast-paced, two-player strategic board game,
+                    similar to tic-tac-toe. The game consists of a 4x4 game
+                    board, as well as a common pool of 16 unique pieces.
+                    The game objective of the game is to line up 4 pieces that
+                    have something in common.</h3>
+                <div id="links">
+                    <a class="link" id="startgame">Start Game</a><!--
+                    --><a href="./howto.html" class="link">Instructions</a><!--
+                    --><a href="./leaderboard.html" class="link">
+                        Leaderboards
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="newGameDiv" class="notVisible">
+            <div id="types">
+                <div id="hotSeat" class="gameType">
+                    <h4>Hot Seat</h4>
+                    <hr/>
+                    <h5>Player 1</h5>
+                    <h6>Name</h6>
+                    <input type="text" name="p1name" value="Darth Cat"/>
+                    <h6>Difficulty</h6>
+                    <p><input type="radio" name="p1rank" value="human"
+                        checked="checked" />
+                        Human</p><!--
+                    --><p><input type="radio" name="p1rank" value="beginner" />
+                        Beginner</p><!--
+                    --><p><input type="radio" name="p1rank" value="amateur" />
+                        Amateur</p><!--
+                    --><p><input type="radio" name="p1rank" value="pro" />
+                        Pro</p><!--
+                    --><p><input type="radio" name="p1rank" value="expert" />
+                        Expert</p><!--
+                    --><p><input type="radio" name="p1rank" value="champ" />
+                        Champ</p>
+                    <hr />
+                    <h5>Player 2</h5>
+                    <h6>Name</h6>
+                    <input type="text" name="p2name" value="Anakin Dogwalker" />
+                    <h6>Difficulty</h6>
+                    <p><input type="radio" name="p2rank" value="human"
+                        checked="checked" />
+                        Human</p><!--
+                    --><p><input type="radio" name="p2rank" value="beginner" />
+                        Beginner</p><!--
+                    --><p><input type="radio" name="p2rank" value="amateur" />
+                        Amateur</p><!--
+                    --><p><input type="radio" name="p2rank" value="pro" />
+                        Pro</p><!--
+                    --><p><input type="radio" name="p2rank" value="expert" />
+                        Expert</p><!--
+                    --><p><input type="radio" name="p2rank" value="champ" />
+                        Champ</p>
+                    <hr />
+                    <input type="submit" value="Start" id="hotseatStart" />
+                </div>
+            </div>
         </div>
         <div id="footer">
             <a href="http://ffrankies.github.io">&copy; 2016 Frank Wanye</a>

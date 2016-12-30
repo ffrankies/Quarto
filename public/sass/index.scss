@@ -7,9 +7,11 @@ $scrnhgt: 100vh;
 
 $hdrhght: 0.8 * $scrnhgt;
 $smallhdrhght: 0.2 * $scrnhgt;
-$h1hght: 0.73 * $scrnhgt;
+$h1hght: 0.5 * 0.73 * $scrnhgt;
+$h1fontsize: 0.6 * $h1hght;
 $smallh1hght: 0.13 * $scrnhgt;
 $smallh1fontsize: 0.7 * $smallh1hght;
+$cardheight: $hdrhght * 0.8;
 
 * {
     margin: 0;
@@ -30,20 +32,45 @@ body {
 }
 
 .largeHeader {
-    height: $hdrhght;
+    @include absoluteSize($scrnwdth, $hdrhght);
+}
+
+.shrinkHeader {
+    @include absoluteSize($scrnwdth, $smallhdrhght);
+}
+
+#logo {
+    @include checkerboard($light-green, $green);
+    @include vertical-flexbox();
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px $gray;
+    text-align: center;
+    color: $dark-green;
+}
+
+.logoLarge {
+    @include absoluteSize(0.78 * $h1hght, 0.78 * $h1hght);
+    border: 0.01 * $h1hght solid $light-green;
+    margin: 0.1 * $h1hght auto;
+    font-size: 0.7 * 0.78 * $h1hght;
+}
+
+.logoSmall {
+    @include absoluteSize(0.78 * $smallh1hght, 0.78 * $smallh1hght);
+    border: 0.01 * $smallh1hght solid $light-green;
+    margin: 0 0 0 2em;
+    font-size: 0.7 * 0.78 * $smallh1hght;
+    float: left;
 }
 
 h1 {
     @include vertical-flexbox;
-    font-size: 10em;
+    font-size: $h1fontsize;
     height: $h1hght;
     color: $light-green;
     text-shadow: 2px 2px 5px $dark-green;
     transition: all 1s;
-}
-
-.shrinkHeader {
-    height: $smallhdrhght;
+    clear: none;
 }
 
 .shrinkH1 {
@@ -68,8 +95,18 @@ h1 {
     padding: 0.3 * 0.07 * $scrnhgt 0.5em 0.3 * 0.07 * $scrnhgt 0.5em;
 }
 
+.button:hover {
+    color: $dark-green;
+}
+
+.button:active {
+    color: $dark-green;
+    text-shadow: -1px -1px 2px $black;
+}
+
 #container {
-    height: $h1hght;
+    @include vertical-flexbox;
+    height: $h1hght * 2;
     transition: all 1s;
     background: transparent;
 }
@@ -79,20 +116,164 @@ h1 {
 }
 
 .shrinkContainer {
-    padding-top: 0.5 * $scrnhgt;
+    padding-top: 0.45 * $scrnhgt;
+}
+
+#card {
+    @include absoluteSize(80%, $cardheight);
+    @include vertical-flexbox;
+    $bgcolor: transparentize($light-green, 0.2);
+    background-color: $bgcolor;
+    box-shadow: 0px 0px 5px $gray;
+    font-size: 2em;
+    color: $dark-green;
+    text-align: center;
+}
+
+#links {
+    width: 0.7 * $scrnwdth;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 0.8em;
+}
+
+.link, input[type=submit] {
+    display: inline-block;
+    width: 0.3 * 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+hr {
+    width: 90%;
+    $hrcolor: transparentize($dark-green, 0.2);
+    border-top: 1px solid $hrcolor;
+    border-bottom: none;
+    margin: 0 5%;
+    box-shadow: 0px 0px 2px $gray;
+}
+
+input {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+input[type=submit], input[type=submit]:focus {
+    width: 70%;
+    margin: 0.5em 15%;
+    font-size: 1em;
+    background-color: inherit;
+    border: none;
+    box-shadow: 0px 0px 2px $gray;
+    outline: none;
+    color: $dark-green;
+}
+
+$radiosize: 5%;
+
+.gameType p {
+    @include vertical-flexbox;
+    display: inline-block;
+    width: 20%;
+    margin: 0.25em 15%;
+    height: $radiosize;
+    text-align: justify;
+}
+
+input[type=text], input[type=text]:focus {
+    width: 80%;
+    margin: 0.5em 10%;
+    color: $dark-green;
+    outline: none;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    background: inherit;
+    border: none;
+    border-bottom: 1px solid $dark-green;
+}
+
+.link:hover, input[type=submit]:hover {
+    $bgcolor: transparentize($dark-green, 0.8);
+    background-color: $bgcolor;
+}
+
+.link:active, input[type=submit]:active {
+    $bgcolor: transparentize($dark-green, 0.5);
+    background-color: $bgcolor;
+}
+
+.link:nth-child(2) {
+    $border-color: transparentize($dark-green, 0.2);
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
 }
 
 a, a:visited, a:link {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
 #footer {
-    height: 0.15 * $scrnhgt;
-    font-size: 3em;
+    height: 0.10 * $scrnhgt;
+    font-size: 0.05 * $scrnhgt;
     @include vertical-flexbox;
     @include linear-gradient(75deg, $dark-green, $green);
     box-shadow: 0px -2px 5px $gray;
     color: $light-green;
     text-shadow: 2px 2px 5px $dark-green;
+}
+
+#newGameDiv {
+    @include absoluteSize(100%, $scrnhgt);
+    position: fixed;
+    top: 0;
+    left: 0;
+    $bgcolor: transparentize($dark-green, 0.4);
+    background-color: $bgcolor;
+}
+
+.notVisible {
+    display: none;
+}
+
+.visible {
+    @include vertical-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#types {
+    @include absoluteSize(80%, 0.8 * $scrnhgt);
+    $bgcolor: transparentize($light-green, 0.2);
+    background-color: $bgcolor;
+    border-radius: 10px;
+    font-size: 1em;
+    color: $dark-green;
+}
+
+#hotSeat {
+    @include absoluteSize(0.4 * 100%, 0.7 * $scrnhgt);
+    padding: 0.05 * $scrnhgt 0.05 * 100%;
+}
+
+h4 {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+h5 {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+h6 {
+    text-align: center;
+    font-size: 1em;
 }
