@@ -85,17 +85,38 @@ h1 {
     height: $noticeheight;
     color: $dark-green;
     @include vertical-flexbox;
+    -webkit-align-content: center;
+    align-content: center;
     background: transparent;
 }
 
-h2, #yes, #no {
+h2 {
     color: inherit;
     font-size: $noticefntsize;
     @include vertical-flexbox;
     @include absoluteSize(auto, 80%);
     padding: 0 2em;
+    margin: auto 1em;
     border-radius: 10px;
     box-shadow: 2px 2px 5px $gray;
+}
+
+#yes, #no {
+    color: inherit;
+    font-size: $noticefntsize;
+    @include absoluteSize(auto, 80%);
+    padding: 0 2em;
+    margin: auto 1em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px $gray;
+}
+
+.notVisible {
+    display: none;
+}
+
+.visible {
+    @include vertical-flexbox;
 }
 
 #game {

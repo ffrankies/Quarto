@@ -29,6 +29,13 @@ function selectId(id) {
 };
 
 /**************************************************************************
+ * Shorter form of document.querySelector.
+ */
+function query(cssQuery) {
+    return document.querySelector(cssQuery);
+};
+
+/**************************************************************************
  * Shorter form of getElementsByClassName
  *************************************************************************/
 function selectClass(classtext) {
@@ -71,8 +78,8 @@ function checkSetUp() {
 
     currentPlayer = player1;
 
-    selectId("notification").innerHTML = "<h2>" + currentPlayer.name +
-        ": Select a piece for your opponent to place.</h2>";
+    query("#notification h2").innerHTML = currentPlayer.name +
+        ": Select a piece for your opponent to place.";
 
     selectId("player1").innerHTML = window.localStorage.getItem(keys[0]);
     selectId("player1rank").innerHTML = Player.RANKS[
@@ -135,19 +142,21 @@ function nextRound() {
 
     END = false;
 
-    selectId("notification").innerHTML = "<h2>" + currentPlayer.name +
-        ": Select a piece for your opponent to place.</h2>";
-        
+    query("#notification h2").innerHTML = currentPlayer.name +
+        ": Select a piece for your opponent to place.";
+
+    selectId("yes").className = "notVisible";
+    selectId("no").className = "notVisible";
+
 };
 
 /**
  * Checks to see if there is a winner. Ends round if there is a winner.
  */
 function isWinner() {
-    // TO-DO;
     if (board.isWinner() === true) {
-        selectId("notification").innerHTML = "<h2>" + currentPlayer.name +
-            " has won!</h2>";
+        query("#notification h2").innerHTML = currentPlayer.name +
+            " has won! Another round?";
         END = true;
         return true;
     } else {
@@ -167,9 +176,11 @@ function updateScore() {
             player2score++;
             selectId("player2score").innerHTML = player2score;
         }
-        nextRound();
+
+        selectId("yes").className = "visible";
+        selectId("no").className = "visible";
     }
-}
+};
 
 /**
  * Switches turn to next player.
@@ -188,15 +199,18 @@ function nextTurn() {
  */
 function selectPiece(index) {
     return function() {
+        if (END) {
+            return;
+        }
         var selected = board.selectPiece(index);
-        if (selected && !END) {
+        if (selected) {
             var pieceDiv = selectOne(selectId("piecesBox"), selected);
             pieceDiv.parentElement.className += " selected";
             selectId("selectedpiece").innerHTML = "<div class='" +
                 selected + "'></div>";
             nextTurn();
-            selectId("notification").innerHTML = "<h2>" +  currentPlayer.name +
-                ": Place the selected piece on the board.</h2>";
+            query("#notification h2").innerHTML = currentPlayer.name +
+                ": Place the selected piece on the board.";
             return true;
         } else {
             alert("Either there is already a selected piece, or this piece" +
@@ -214,15 +228,18 @@ function selectPiece(index) {
  */
 function placePiece(index) {
     return function() {
+        if (END) {
+            return;
+        }
         var pos = indexToPos(index);
         var success = board.placePiece(pos);
-        if (success && !END) {
+        if (success) {
             var cell = selectClass("cell")[index];
             var selectedDiv = selectId("selectedpiece");
             cell.innerHTML = selectedDiv.innerHTML;
             selectedDiv.innerHTML = "";
-            selectId("notification").innerHTML = "<h2>" + currentPlayer.name +
-                ": Select a piece for your opponent to place.</h2>";
+            query("#notification h2").innerHTML = currentPlayer.name +
+                ": Select a piece for your opponent to place.";
             updateScore();
         } else {
             alert("Either there is no piece to place here, or there is " +
@@ -251,6 +268,27 @@ function init() {
     for (var index = 0; index < 16; index++) {
         cells[index].onclick = placePiece(index);
     }
+
+    // Allow next round to be played.
+    selectId("yes").onclick = function() {
+        nextRound();
+    };
+
+    // Leave board as is.
+    selectId("no").onclick = function() {
+        selectId("yes").className = "notVisible";
+        selectId("no").className = "notVisible";
+        var text = "";
+        if (player1score > player2score) {
+            text = player1.name + " has won this set of matches!";
+        } else if (player1score < player2score) {
+            text = player2.name + " has won this set of matches!";
+        } else {
+            text = "This set of matches ended in a draw!";
+        }
+        query("#notification h2").innerHTML = text;
+    };
+
 };
 
 document.addEventListener("readystatechange", function() {
