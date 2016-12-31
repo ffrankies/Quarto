@@ -115,6 +115,31 @@ function firstTurn() {
     return (board.numEmpty() == 16);
 };
 
+/*
+ * Sets up the Board for a new Round.
+ */
+function nextRound() {
+    board = Board.init();
+
+    // Clear the game pieces.
+    var pieces = selectId("piecesBox").children;
+    for (var index = 0; index < 16; index++) {
+        pieces[index].className = "piece";
+    }
+
+    // Clear the game board.
+    var cells = selectClass("cell");
+    for (var index = 0; index < 16; index++) {
+        cells[index].innerHTML = "";
+    }
+
+    END = false;
+
+    selectId("notification").innerHTML = "<h2>" + currentPlayer.name +
+        ": Select a piece for your opponent to place.</h2>";
+        
+};
+
 /**
  * Checks to see if there is a winner. Ends round if there is a winner.
  */
@@ -142,6 +167,7 @@ function updateScore() {
             player2score++;
             selectId("player2score").innerHTML = player2score;
         }
+        nextRound();
     }
 }
 

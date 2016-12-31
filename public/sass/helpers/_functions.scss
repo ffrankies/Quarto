@@ -75,7 +75,7 @@
         $bordercolor: transparentize($dark-green, 0.2);
         border: 5px solid $bordercolor;
     } @else {
-        border: none;
+        border: 5px solid $color;
     }
     box-shadow: 0px 0px 2px $black;
 }

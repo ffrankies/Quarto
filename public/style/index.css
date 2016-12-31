@@ -1,3 +1,228 @@
+#newGameDiv, #logInDiv, #signUpDiv {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(18, 85, 33, 0.6);
+  color: #125521;
+  -webkit-justify-content: center;
+  justify-content: center; }
+
+.notVisible {
+  display: none; }
+
+.visible {
+  display: -webkit-flex;
+  -webkit-flex: 1;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-align-content: space-around;
+  -webkit-flex-wrap: wrap;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: flex; }
+
+#types {
+  width: 80%;
+  max-width: 80%;
+  min-width: 80%;
+  height: 80vh;
+  max-height: 80vh;
+  min-height: 80vh;
+  background-color: rgba(220, 254, 237, 0.8);
+  border-radius: 10px;
+  color: #125521; }
+
+#logIn, #signUp {
+  display: -webkit-flex;
+  -webkit-flex: 1;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-align-content: space-around;
+  -webkit-flex-wrap: wrap;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 50%;
+  max-width: 50%;
+  min-width: 50%;
+  height: 64vh;
+  max-height: 64vh;
+  min-height: 64vh;
+  background-color: rgba(220, 254, 237, 0.8);
+  border-radius: 10px;
+  color: #125521; }
+
+#hotSeat {
+  display: -webkit-flex;
+  -webkit-flex: 1;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-align-content: space-around;
+  -webkit-flex-wrap: wrap;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 40%;
+  max-width: 40%;
+  min-width: 40%;
+  height: 72vh;
+  max-height: 72vh;
+  min-height: 72vh;
+  padding: 4vh 5%; }
+
+h4 {
+  text-align: center;
+  font-size: 8vh; }
+
+h5 {
+  text-align: center;
+  font-size: 5.6vh; }
+
+h6 {
+  text-align: center;
+  font-size: 1em; }
+
+#newGameDiv hr, #logInDiv hr, #signUpDiv hr {
+  width: 90%;
+  border-top: 1px solid rgba(18, 85, 33, 0.8);
+  border-bottom: none;
+  margin: 4vh 5%;
+  box-shadow: 0px 0px 2px #555555; }
+
+input {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
+input[type=text], input[type=text]:focus, input[type=password],
+input[type=password]:focus {
+  width: 80%;
+  margin: 1.6vh 10% 0 10%;
+  color: #125521;
+  outline: none;
+  font-size: 4vh;
+  font-weight: bold;
+  text-align: center;
+  background: inherit;
+  border: none;
+  border-bottom: 1px solid #125521; }
+
+input[type=submit], input[type=submit]:focus {
+  width: 70%;
+  margin: 0 15%;
+  font-size: 6.4vh;
+  background-color: inherit;
+  box-shadow: 0px 0px 2px #555555;
+  outline: none;
+  color: #125521;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 10px; }
+
+.gameType p {
+  display: -webkit-flex;
+  -webkit-flex: 1;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-align-content: space-around;
+  -webkit-flex-wrap: wrap;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+  display: inline-block;
+  width: 20%;
+  margin: 0.25em 15%;
+  height: 5%;
+  text-align: justify; }
+
+.cancel:hover, input[type=submit]:hover {
+  border: 2px solid #125521; }
+
+.cancel:active, input[type=submit]:active {
+  border: 2px solid #125521;
+  background-color: #125521;
+  color: #DCFEED; }
+
+.cancel {
+  width: 75%;
+  max-width: 75%;
+  min-width: 75%;
+  height: 8vh;
+  max-height: 8vh;
+  min-height: 8vh;
+  display: -webkit-flex;
+  -webkit-flex: 1;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-around;
+  -webkit-align-items: center;
+  -webkit-align-content: space-around;
+  -webkit-flex-wrap: wrap;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+  font-size: 6.4vh;
+  background-color: rgba(220, 254, 237, 0.8);
+  text-align: center;
+  color: #125521;
+  font-weight: bold;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-top: 4vh; }
+
+#logInDiv .cancel, #signUpDiv .cancel {
+  width: 45%;
+  max-width: 45%;
+  min-width: 45%;
+  height: 6.4vh;
+  max-height: 6.4vh;
+  min-height: 6.4vh;
+  font-size: 4.8vh; }
+
+#logInDiv input[type=text], #logInDiv input[type=password],
+#signUpDiv input[type=text], #signUpDiv input[type=password] {
+  background-color: transparent; }
+
+#logInDiv input[type=submit], #signUpDiv input[type=submit] {
+  background-color: transparent;
+  font-size: 5.12vh; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -151,7 +376,7 @@ h1 {
   align-items: center;
   align-content: space-around;
   flex-wrap: wrap;
-  height: 73vh;
+  height: 70vh;
   transition: all 1s;
   background: transparent; }
 
@@ -159,7 +384,7 @@ h1 {
   padding-top: 100vh; }
 
 .shrinkContainer {
-  padding-top: 45vh; }
+  padding-top: 50vh; }
 
 #card {
   width: 80%;
@@ -197,70 +422,16 @@ h2 {
 h3 {
   font-size: 0.8em; }
 
-.link, input[type=submit] {
+.link {
   display: inline-block;
   width: 30%;
   text-align: center;
   font-weight: bold; }
 
-hr {
-  width: 90%;
-  border-top: 1px solid rgba(18, 85, 33, 0.8);
-  border-bottom: none;
-  margin: 0 5%;
-  box-shadow: 0px 0px 2px #555555; }
-
-input {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em; }
-
-input[type=submit], input[type=submit]:focus {
-  width: 70%;
-  margin: 0.5em 15%;
-  font-size: 1em;
-  background-color: inherit;
-  border: none;
-  box-shadow: 0px 0px 2px #555555;
-  outline: none;
-  color: #125521; }
-
-.gameType p {
-  display: -webkit-flex;
-  -webkit-flex: 1;
-  -webkit-flex-direction: column;
-  -webkit-justify-content: space-around;
-  -webkit-align-items: center;
-  -webkit-align-content: space-around;
-  -webkit-flex-wrap: wrap;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  align-content: space-around;
-  flex-wrap: wrap;
-  display: inline-block;
-  width: 20%;
-  margin: 0.25em 15%;
-  height: 5%;
-  text-align: justify; }
-
-input[type=text], input[type=text]:focus {
-  width: 80%;
-  margin: 0.5em 10%;
-  color: #125521;
-  outline: none;
-  font-size: 1em;
-  font-weight: bold;
-  text-align: center;
-  background: inherit;
-  border: none;
-  border-bottom: 1px solid #125521; }
-
-.link:hover, input[type=submit]:hover {
+.link:hover {
   background-color: rgba(18, 85, 33, 0.2); }
 
-.link:active, input[type=submit]:active {
+.link:active {
   background-color: rgba(18, 85, 33, 0.5); }
 
 .link:nth-child(2) {
@@ -297,71 +468,5 @@ a, a:visited, a:link {
   box-shadow: 0px -2px 5px #555555;
   color: #DCFEED;
   text-shadow: 2px 2px 5px #125521; }
-
-#newGameDiv {
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  height: 100vh;
-  max-height: 100vh;
-  min-height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(18, 85, 33, 0.6); }
-
-.notVisible {
-  display: none; }
-
-.visible {
-  display: -webkit-flex;
-  -webkit-flex: 1;
-  -webkit-flex-direction: column;
-  -webkit-justify-content: space-around;
-  -webkit-align-items: center;
-  -webkit-align-content: space-around;
-  -webkit-flex-wrap: wrap;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  align-content: space-around;
-  flex-wrap: wrap;
-  display: -webkit-flex;
-  display: flex; }
-
-#types {
-  width: 80%;
-  max-width: 80%;
-  min-width: 80%;
-  height: 80vh;
-  max-height: 80vh;
-  min-height: 80vh;
-  background-color: rgba(220, 254, 237, 0.8);
-  border-radius: 10px;
-  font-size: 1em;
-  color: #125521; }
-
-#hotSeat {
-  width: 40%;
-  max-width: 40%;
-  min-width: 40%;
-  height: 70vh;
-  max-height: 70vh;
-  min-height: 70vh;
-  padding: 5vh 5%; }
-
-h4 {
-  text-align: center;
-  font-size: 1.5em; }
-
-h5 {
-  text-align: center;
-  font-size: 1.2em; }
-
-h6 {
-  text-align: center;
-  font-size: 1em; }
 
 /*# sourceMappingURL=index.css.map */

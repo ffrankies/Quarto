@@ -1,6 +1,7 @@
 @import "helpers/colors";
 @import "helpers/gradients";
 @import "helpers/functions";
+@import "helpers/forms";
 
 $scrnwdth: 100vw;
 $scrnhgt: 100vh;
@@ -106,7 +107,7 @@ h1 {
 
 #container {
     @include vertical-flexbox;
-    height: $h1hght * 2;
+    height: 0.7 * $scrnhgt;
     transition: all 1s;
     background: transparent;
 }
@@ -116,7 +117,7 @@ h1 {
 }
 
 .shrinkContainer {
-    padding-top: 0.45 * $scrnhgt;
+    padding-top: 0.5 * $scrnhgt;
 }
 
 #card {
@@ -142,68 +143,19 @@ h3 {
     font-size: 0.8em;
 }
 
-.link, input[type=submit] {
+.link {
     display: inline-block;
     width: 0.3 * 100%;
     text-align: center;
     font-weight: bold;
 }
 
-hr {
-    width: 90%;
-    $hrcolor: transparentize($dark-green, 0.2);
-    border-top: 1px solid $hrcolor;
-    border-bottom: none;
-    margin: 0 5%;
-    box-shadow: 0px 0px 2px $gray;
-}
-
-input {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-input[type=submit], input[type=submit]:focus {
-    width: 70%;
-    margin: 0.5em 15%;
-    font-size: 1em;
-    background-color: inherit;
-    border: none;
-    box-shadow: 0px 0px 2px $gray;
-    outline: none;
-    color: $dark-green;
-}
-
-$radiosize: 5%;
-
-.gameType p {
-    @include vertical-flexbox;
-    display: inline-block;
-    width: 20%;
-    margin: 0.25em 15%;
-    height: $radiosize;
-    text-align: justify;
-}
-
-input[type=text], input[type=text]:focus {
-    width: 80%;
-    margin: 0.5em 10%;
-    color: $dark-green;
-    outline: none;
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
-    background: inherit;
-    border: none;
-    border-bottom: 1px solid $dark-green;
-}
-
-.link:hover, input[type=submit]:hover {
+.link:hover {
     $bgcolor: transparentize($dark-green, 0.8);
     background-color: $bgcolor;
 }
 
-.link:active, input[type=submit]:active {
+.link:active {
     $bgcolor: transparentize($dark-green, 0.5);
     background-color: $bgcolor;
 }
@@ -221,59 +173,11 @@ a, a:visited, a:link {
 }
 
 #footer {
-    height: 0.10 * $scrnhgt;
+    height: 0.1 * $scrnhgt;
     font-size: 0.05 * $scrnhgt;
     @include vertical-flexbox;
     @include linear-gradient(75deg, $dark-green, $green);
     box-shadow: 0px -2px 5px $gray;
     color: $light-green;
     text-shadow: 2px 2px 5px $dark-green;
-}
-
-#newGameDiv {
-    @include absoluteSize(100%, $scrnhgt);
-    position: fixed;
-    top: 0;
-    left: 0;
-    $bgcolor: transparentize($dark-green, 0.4);
-    background-color: $bgcolor;
-}
-
-.notVisible {
-    display: none;
-}
-
-.visible {
-    @include vertical-flexbox;
-    display: -webkit-flex;
-    display: flex;
-}
-
-#types {
-    @include absoluteSize(80%, 0.8 * $scrnhgt);
-    $bgcolor: transparentize($light-green, 0.2);
-    background-color: $bgcolor;
-    border-radius: 10px;
-    font-size: 1em;
-    color: $dark-green;
-}
-
-#hotSeat {
-    @include absoluteSize(0.4 * 100%, 0.7 * $scrnhgt);
-    padding: 0.05 * $scrnhgt 0.05 * 100%;
-}
-
-h4 {
-    text-align: center;
-    font-size: 1.5em;
-}
-
-h5 {
-    text-align: center;
-    font-size: 1.2em;
-}
-
-h6 {
-    text-align: center;
-    font-size: 1em;
 }

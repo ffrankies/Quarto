@@ -46,44 +46,43 @@
                     <h4>Hot Seat</h4>
                     <hr/>
                     <h5>Player 1</h5>
-                    <h6>Name</h6>
                     <input type="text" name="p1name" value="Darth Cat"/>
-                    <h6>Difficulty</h6>
-                    <p><input type="radio" name="p1rank" value="0"
-                        checked="checked" />
-                        Human</p><!--
-                    --><p><input type="radio" name="p1rank" value="1" />
-                        Beginner</p><!--
-                    --><p><input type="radio" name="p1rank" value="2" />
-                        Amateur</p><!--
-                    --><p><input type="radio" name="p1rank" value="3" />
-                        Pro</p><!--
-                    --><p><input type="radio" name="p1rank" value="4" />
-                        Expert</p><!--
-                    --><p><input type="radio" name="p1rank" value="5" />
-                        Champ</p>
                     <hr />
                     <h5>Player 2</h5>
-                    <h6>Name</h6>
                     <input type="text" name="p2name" value="Anakin Dogwalker" />
-                    <h6>Difficulty</h6>
-                    <p><input type="radio" name="p2rank" value="0"
-                        checked="checked" />
-                        Human</p><!--
-                    --><p><input type="radio" name="p2rank" value="1" />
-                        Beginner</p><!--
-                    --><p><input type="radio" name="p2rank" value="2" />
-                        Amateur</p><!--
-                    --><p><input type="radio" name="p2rank" value="3" />
-                        Pro</p><!--
-                    --><p><input type="radio" name="p2rank" value="4" />
-                        Expert</p><!--
-                    --><p><input type="radio" name="p2rank" value="5" />
-                        Champ</p>
                     <hr />
                     <input type="submit" value="Start" id="hotseatStart" />
                 </div>
             </div>
+            <div class="cancel">Cancel</div>
+        </div>
+        <div id="logInDiv" class="notVisible">
+            <div id="logIn" class="auth">
+                <h4>Log In</h4>
+                <hr/>
+                <h5>Username</h5>
+                <input type="text" name="logInUname" value="Darth Cat"/>
+                <h5>Password</h5>
+                <input type="password" name="logInPwd" value="0123abcd"/>
+                <div id="logInError"></div>
+                <hr/>
+                <input type="submit" value="Done" id="logInDone" />
+            </div>
+            <div class="cancel">Cancel</div>
+        </div>
+        <div id="signUpDiv" class="notVisible">
+            <div id="signUp" class="auth">
+                <h4>Sign UP</h4>
+                <hr/>
+                <h5>Username</h5>
+                <input type="text" name="signUpUname" value="Darth Cat"/>
+                <h5>Password</h5>
+                <input type="password" name="signUpPwd" value="0123abcd"/>
+                <div id="signUpError"></div>
+                <hr/>
+                <input type="submit" value="Done" id="signUpDone" />
+            </div>
+            <div class="cancel">Cancel</div>
         </div>
         <div id="footer">
             <a href="http://ffrankies.github.io">&copy; 2016 Frank Wanye</a>

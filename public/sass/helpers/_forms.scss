@@ -1,0 +1,160 @@
+$scrnwdth: 100vw;
+$scrnhgt: 100vh;
+$optionsHeight: 0.8 * $scrnhgt;
+
+#newGameDiv, #logInDiv, #signUpDiv {
+    @include absoluteSize(100%, $scrnhgt);
+    position: fixed;
+    top: 0;
+    left: 0;
+    $bgcolor: transparentize($dark-green, 0.4);
+    background-color: $bgcolor;
+    color: $dark-green;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.notVisible {
+    display: none;
+}
+
+.visible {
+    @include vertical-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#types {
+    @include absoluteSize(80%, $optionsHeight);
+    $bgcolor: transparentize($light-green, 0.2);
+    background-color: $bgcolor;
+    border-radius: 10px;
+    color: $dark-green;
+}
+
+#logIn, #signUp {
+    @include vertical-flexbox;
+    -webkit-justify-content: center;
+    justify-content: center;
+    @include absoluteSize(50%, 0.8 * $optionsHeight);
+    $bgcolor: transparentize($light-green, 0.2);
+    background-color: $bgcolor;
+    border-radius: 10px;
+    color: $dark-green;
+}
+
+#hotSeat {
+    @include vertical-flexbox;
+    -webkit-justify-content: center;
+    justify-content: center;
+    @include absoluteSize(40%, 0.9 * $optionsHeight);
+    padding: 0.05 * $optionsHeight 0.05 * 100%;
+}
+
+h4 {
+    text-align: center;
+    font-size: 0.1 * $optionsHeight;
+}
+
+h5 {
+    text-align: center;
+    font-size: 0.07 * $optionsHeight;
+}
+
+h6 {
+    text-align: center;
+    font-size: 1em;
+}
+
+#newGameDiv hr, #logInDiv hr, #signUpDiv hr {
+    width: 90%;
+    $hrcolor: transparentize($dark-green, 0.2);
+    border-top: 1px solid $hrcolor;
+    border-bottom: none;
+    margin: 0.05 * $optionsHeight 5%;
+    box-shadow: 0px 0px 2px $gray;
+}
+
+input {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+input[type=text], input[type=text]:focus, input[type=password],
+input[type=password]:focus {
+    width: 80%;
+    margin: 0.02 * $optionsHeight 10% 0 10%;
+    color: $dark-green;
+    outline: none;
+    font-size: 0.05 * $optionsHeight;
+    font-weight: bold;
+    text-align: center;
+    background: inherit;
+    border: none;
+    border-bottom: 1px solid $dark-green;
+}
+
+input[type=submit], input[type=submit]:focus {
+    width: 70%;
+    margin: 0 15%;
+    font-size: 0.08 * $optionsHeight;
+    background-color: inherit;
+    box-shadow: 0px 0px 2px $gray;
+    outline: none;
+    color: $dark-green;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+
+$radiosize: 5%;
+
+.gameType p {
+    @include vertical-flexbox;
+    display: inline-block;
+    width: 20%;
+    margin: 0.25em 15%;
+    height: $radiosize;
+    text-align: justify;
+}
+
+.cancel:hover, input[type=submit]:hover {
+    border: 2px solid $dark-green;
+}
+
+.cancel:active, input[type=submit]:active {
+    border: 2px solid $dark-green;
+    background-color: $dark-green;
+    color: $light-green;
+}
+
+.cancel {
+    @include absoluteSize(75%, 0.1 * $optionsHeight);
+    @include vertical-flexbox;
+    font-size: 0.08 * $optionsHeight;
+    $bgcolor: transparentize($light-green, 0.2);
+    background-color: $bgcolor;
+    text-align: center;
+    color: $dark-green;
+    font-weight: bold;
+    border-radius: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: 0.05 * $optionsHeight;
+}
+
+#logInDiv .cancel, #signUpDiv .cancel {
+    @include absoluteSize(45%, 0.08 * $optionsHeight);
+    font-size: 0.06 * $optionsHeight;
+}
+
+#logInDiv input[type=text], #logInDiv input[type=password],
+#signUpDiv input[type=text], #signUpDiv input[type=password] {
+    background-color: transparent;
+}
+
+#logInDiv input[type=submit], #signUpDiv input[type=submit] {
+    background-color: transparent;
+    font-size: 0.8 * 0.08 * $optionsHeight;
+}

@@ -12,15 +12,20 @@ function processHotSeat() {
     if (player2Name == null || player2Name == "") {
         player2Name = "Player 2";
     }
-    var player1rank = document.querySelector(
-        'input[name="p1rank"]:checked').value;
-    var player2rank = document.querySelector(
-        'input[name="p2rank"]:checked').value;
     window.localStorage.setItem("player1Name", player1Name);
     window.localStorage.setItem("player2Name", player2Name);
-    window.localStorage.setItem("player1Rank", player1rank);
-    window.localStorage.setItem("player2Rank", player2rank);
+    window.localStorage.setItem("player1Rank", 0);
+    window.localStorage.setItem("player2Rank", 0);
     window.location.href = "game.html";
+};
+
+/**
+ * Hides the given div's parent
+ */
+function hideParent(div) {
+    return function() {
+        div.parentNode.className = "notVisible";
+    };
 };
 
 /**
@@ -29,9 +34,21 @@ function processHotSeat() {
 function newGame() {
     var startGame = document.getElementById("startgame");
     startGame.onclick = function() {
-        var newGameDiv = document.getElementById("newGameDiv");
-        newGameDiv.className = "visible";
+        document.getElementById("newGameDiv").className = "visible";
     };
+    var logIn = document.getElementById("log-in");
+    logIn.onclick = function() {
+        document.getElementById("logInDiv").className = "visible";
+    };
+    var signUp = document.getElementById("sign-up");
+    signUp.onclick = function() {
+        document.getElementById("signUpDiv").className = "visible";
+    };
+    var cancelButtons = document.getElementsByClassName("cancel");
+    for (var i = 0; i < cancelButtons.length; i++) {
+        var button = cancelButtons[i];
+        button.onclick = hideParent(button);
+    }
     var hotSeat = document.getElementById("hotseatStart");
     hotSeat.onclick = function() {
         processHotSeat();

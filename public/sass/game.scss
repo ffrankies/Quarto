@@ -88,7 +88,7 @@ h1 {
     background: transparent;
 }
 
-h2 {
+h2, #yes, #no {
     color: inherit;
     font-size: $noticefntsize;
     @include vertical-flexbox;
