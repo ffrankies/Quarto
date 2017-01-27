@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+loggedIn	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^var loggedIn = false;$/;"	variable	line:9
+selectId	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function selectId(id) {$/;"	function	line:14
+selectId	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function selectId(id) {$/;"	function	line:14
+query	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function query(cssQuery) {$/;"	function	line:22
+query	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function query(cssQuery) {$/;"	function	line:22
+selectClass	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function selectClass(classtext) {$/;"	function	line:29
+selectClass	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function selectClass(classtext) {$/;"	function	line:29
+selectOne	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function selectOne(parent, classtext) {$/;"	function	line:38
+selectOne	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function selectOne(parent, classtext) {$/;"	function	line:38
+checkLogIn	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function checkLogIn() {$/;"	function	line:46
+checkLogIn	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function checkLogIn() {$/;"	function	line:46
+logIn	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function logIn(uname, pwd) {$/;"	function	line:53
+logIn	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function logIn(uname, pwd) {$/;"	function	line:53
+signUp	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function signUp(uname, pwd) {$/;"	function	line:60
+signUp	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function signUp(uname, pwd) {$/;"	function	line:60
+validate	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function validate(option) {$/;"	function	line:68
+validate	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function validate(option) {$/;"	function	line:68
+initUsers	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function initUsers() {$/;"	function	line:100
+initUsers	C:\Users\Frank\Website\quarto-arena\public\scripts\users.js	/^function initUsers() {$/;"	function	line:100

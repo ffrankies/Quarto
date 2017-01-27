@@ -4,11 +4,12 @@ $optionsHeight: 0.8 * $scrnhgt;
 
 #newGameDiv, #logInDiv, #signUpDiv {
     @include absoluteSize(100%, $scrnhgt);
+    @include linear-gradient(105deg, $dark-green, $green);
     position: fixed;
     top: 0;
     left: 0;
     $bgcolor: transparentize($dark-green, 0.4);
-    background-color: $bgcolor;
+    background-color: $green;
     color: $dark-green;
     -webkit-justify-content: center;
     justify-content: center;
@@ -24,26 +25,14 @@ $optionsHeight: 0.8 * $scrnhgt;
     display: flex;
 }
 
-#types {
-    @include absoluteSize(80%, $optionsHeight);
-    $bgcolor: transparentize($light-green, 0.2);
-    background-color: $bgcolor;
-    border-radius: 10px;
-    color: $dark-green;
-}
-
-#logIn, #signUp {
+#types, #logIn, #signUp {
+    @include absoluteSize(50%, $optionsHeight);
     @include vertical-flexbox;
-    -webkit-justify-content: center;
-    justify-content: center;
-    @include absoluteSize(50%, 0.8 * $optionsHeight);
-    $bgcolor: transparentize($light-green, 0.2);
-    background-color: $bgcolor;
-    border-radius: 10px;
+    background-color: $light-green;
     color: $dark-green;
 }
 
-#hotSeat {
+.inner_ops {
     @include vertical-flexbox;
     -webkit-justify-content: center;
     justify-content: center;
@@ -61,18 +50,22 @@ h5 {
     font-size: 0.07 * $optionsHeight;
 }
 
-h6 {
+.error_message {
+    @include vertical-flexbox;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.03 * $optionsHeight;
 }
 
-#newGameDiv hr, #logInDiv hr, #signUpDiv hr {
+hr {
     width: 90%;
     $hrcolor: transparentize($dark-green, 0.2);
     border-top: 1px solid $hrcolor;
     border-bottom: none;
     margin: 0.05 * $optionsHeight 5%;
     box-shadow: 0px 0px 2px $gray;
+    &:nth-of-type(2) {
+        opacity: 0;
+    }
 }
 
 input {
@@ -105,7 +98,6 @@ input[type=submit], input[type=submit]:focus {
     text-align: center;
     font-weight: bold;
     border: 2px solid transparent;
-    border-radius: 10px;
 }
 
 $radiosize: 5%;
@@ -130,23 +122,16 @@ $radiosize: 5%;
 }
 
 .cancel {
-    @include absoluteSize(75%, 0.1 * $optionsHeight);
+    @include absoluteSize(50%, 0.1 * $optionsHeight);
     @include vertical-flexbox;
     font-size: 0.08 * $optionsHeight;
-    $bgcolor: transparentize($light-green, 0.2);
-    background-color: $bgcolor;
+    background-color: $light-green;
     text-align: center;
     color: $dark-green;
     font-weight: bold;
-    border-radius: 10px;
     box-sizing: border-box;
     cursor: pointer;
     margin-top: 0.05 * $optionsHeight;
-}
-
-#logInDiv .cancel, #signUpDiv .cancel {
-    @include absoluteSize(45%, 0.08 * $optionsHeight);
-    font-size: 0.06 * $optionsHeight;
 }
 
 #logInDiv input[type=text], #logInDiv input[type=password],
@@ -154,7 +139,7 @@ $radiosize: 5%;
     background-color: transparent;
 }
 
-#logInDiv input[type=submit], #signUpDiv input[type=submit] {
-    background-color: transparent;
-    font-size: 0.8 * 0.08 * $optionsHeight;
-}
+// #logInDiv input[type=submit], #signUpDiv input[type=submit] {
+//     background-color: transparent;
+//     font-size: 0.8 * 0.08 * $optionsHeight;
+// }

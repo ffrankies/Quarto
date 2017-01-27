@@ -1,0 +1,29 @@
+$screen_h: 100vh;
+$container_h: 0.84 * $screen_h;
+$logo_s: 0.56 * $container_h;
+
+#logo {
+    &::before {
+        content: 'Q';
+    }
+    $rotate_time: 6s;
+    $change_shape_time: 17s;
+    @include checkerboard($light-green, $green, $logo_s * 0.35);
+    @include vertical-flexbox;
+    @include absoluteSize($logo_s, $logo_s);
+    @include rotate_and_shape($rotate_time, $change_shape_time);
+    margin-bottom: 0.1 * $container_h;
+    font-size: 0.8 * $logo_s;
+    border-radius: 50%;
+    // box-shadow: 0px 0px 5px $gray;
+    text-align: center;
+    color: $dark-green;
+    cursor: default;
+    transition: 1s all;
+    font-family: serif;
+}
+
+#logo:hover {
+    box-shadow: 0px 0px 10px $black;
+    text-shadow: 0px -4px 8px $black;
+}

@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
  * Allow new users to register. Once a user is registered, create an entry
  * in the Players collection for the user.
  */
-router.post('/signup', function(req, res) {
+router.post('/signup', function(req, res, next) {
     User.register(new User(
         {
             username: req.body.username,
@@ -26,12 +26,13 @@ router.post('/signup', function(req, res) {
             return res.status(500).json(
                 {
                     success: false,
-                    message: "Registration failure - adding user",
+                    message: err.message,
                     error: err
                 }
             );
         }
-        passport.authenticate('local')(req, res, dboper.addPlayer(req, res));
+        passport.authenticate('local', dboper.addPlayer(req, res))(
+            req, res, next);
     }); // end of register
 });
 
@@ -62,6 +63,7 @@ router.post('/login', function(req, res, next) {
         }
         req.logIn(user, function(err) {
             if (err) {
+                console.log(err);
                 return res.status(500).json(
                     {
                         success: false,
@@ -73,11 +75,12 @@ router.post('/login', function(req, res, next) {
 
             var token = Verify.getToken(user);
 
+            res.cookie("quartotoken", token, { signed: true, httpOnly: true });
             res.status(200).json(
                 {
                     success: true,
-                    message: "Successfully logged in",
-                    token: token
+                    message: "Successfully logged in"// ,
+                    // token: token
                 }
             );
         });
@@ -89,12 +92,20 @@ router.post('/login', function(req, res, next) {
  */
 router.get('/logout', function(req, res) {
     req.logout();
+    res.clearCookie('quartotoken');
     return res.status(200).json(
         {
             success: true,
             message: "Successully logged out"
         }
     );
+});
+
+/**
+ * Checks if a user is logged in.
+ */
+router.get('/verify', Verify.verifyUser, function(req, res, next) {
+    // Do nothing
 });
 
 module.exports = router;

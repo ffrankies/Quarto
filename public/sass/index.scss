@@ -2,122 +2,128 @@
 @import "helpers/gradients";
 @import "helpers/functions";
 @import "helpers/forms";
+@import "helpers/anims";
+@import "helpers/logo";
 
-$scrnwdth: 100vw;
-$scrnhgt: 100vh;
+$screen_w: 100vw;
+$screen_h: 100vh;
 
-$hdrhght: 0.8 * $scrnhgt;
-$smallhdrhght: 0.2 * $scrnhgt;
-$h1hght: 0.5 * 0.73 * $scrnhgt;
+$hdrhght: 0.8 * $screen_h;
+$smallhdrhght: 0.2 * $screen_h;
+$h1hght: 0.5 * 0.73 * $screen_h;
 $h1fontsize: 0.6 * $h1hght;
-$smallh1hght: 0.13 * $scrnhgt;
+$smallh1hght: 0.13 * $screen_h;
 $smallh1fontsize: 0.7 * $smallh1hght;
 $cardheight: $hdrhght * 0.8;
+
+$header_h: 0.1 * $screen_h;
+$container_h: 0.84 * $screen_h;
+$footer_h: 0.06 * $screen_h;
 
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Aldo';
 }
 
 body {
-    //background-color: $light-green;
-    @include crisscross(white, $light-green, $dark-green);
+    background-color: $light-green;
+    overflow: hidden;
+    //@include crisscross(white, $light-green, $dark-green);
 }
 
 #header {
     @include linear-gradient(105deg, $dark-green, $green);
-    box-shadow: 0px 2px 5px $gray;
+    @include absoluteSize($screen_w, $header_h);
+    @include horizontal-flexbox;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
+    //box-shadow: 0px 2px 5px $gray;
     transition: all 1s;
-    position: fixed;
-    width: $scrnwdth;
-}
-
-.largeHeader {
-    @include absoluteSize($scrnwdth, $hdrhght);
-}
-
-.shrinkHeader {
-    @include absoluteSize($scrnwdth, $smallhdrhght);
-}
-
-#logo {
-    @include checkerboard($light-green, $green);
-    @include vertical-flexbox();
-    border-radius: 50%;
-    box-shadow: 0px 0px 5px $gray;
-    text-align: center;
-    color: $dark-green;
-}
-
-.logoLarge {
-    @include absoluteSize(0.78 * $h1hght, 0.78 * $h1hght);
-    border: 0.01 * $h1hght solid $light-green;
-    margin: 0.1 * $h1hght auto;
-    font-size: 0.7 * 0.78 * $h1hght;
-}
-
-.logoSmall {
-    @include absoluteSize(0.78 * $smallh1hght, 0.78 * $smallh1hght);
-    border: 0.01 * $smallh1hght solid $light-green;
-    margin: 0 0 0 2em;
-    font-size: 0.7 * 0.78 * $smallh1hght;
-    float: left;
-}
-
-h1 {
-    @include vertical-flexbox;
-    font-size: $h1fontsize;
-    height: $h1hght;
-    color: $light-green;
-    text-shadow: 2px 2px 5px $dark-green;
-    transition: all 1s;
-    clear: none;
-}
-
-.shrinkH1 {
-    margin: 0;
-    height: $smallh1hght;
-    font-size: $smallh1fontsize;
-    line-height: $smallh1fontsize;
-}
-
-#buttons {
-    text-align: right;
-    padding-right: 2em;
+    width: $screen_w;
 }
 
 .button {
-    display: inline-block;
-    font-size: 0.4 * 0.07 * $scrnhgt;
-    line-height: 0.4 * 0.07 * $scrnhgt;
+    @include vertical-flexbox;
+    @include absoluteSize(0.1 * $screen_w, 0.7 * $header_h);
+    font-size: 0.35 * $header_h;
     color: $light-green;
-    text-shadow: 2px 2px 3px  $dark-green;
-    text-align: center;
-    padding: 0.3 * 0.07 * $scrnhgt 0.5em 0.3 * 0.07 * $scrnhgt 0.5em;
 }
 
-.button:hover {
+#log-in:hover, #sign-up:hover {
     color: $dark-green;
 }
 
-.button:active {
-    color: $dark-green;
-    text-shadow: -1px -1px 2px $black;
+#log-in:active, #sign-up:active {
+    color: $mid-green;
+}
+
+#username {
+    @include absoluteSize(0.3 * $screen_w, 0.7 * $header_h);
 }
 
 #container {
     @include vertical-flexbox;
-    height: 0.7 * $scrnhgt;
+    @include absoluteSize($screen_w, $container_h);
     transition: all 1s;
     background: transparent;
 }
 
-.largeContainer {
-    padding-top: $scrnhgt;
+h1 {
+    $h1_s: 0.3 * $container_h;
+    @include vertical-flexbox;
+    @include absoluteSize($screen_w, $h1_s);
+    font-size: 0.7 * $h1_s;
+    color: $dark-green;
+    cursor: default;
+    transition: all 1s;
+    //text-shadow: 2px 2px 5px $dark-green;
 }
 
-.shrinkContainer {
-    padding-top: 0.5 * $scrnhgt;
+h1:hover {
+    text-shadow: 0px 2px 4px $black;
+}
+
+$logo_s: 0.56 * $container_h;
+$menu_h: 0.7 * $container_h;
+$menu_item_w: 0.30 * $screen_w;
+
+#menu {
+    @include horizontal-flexbox;
+    @include absoluteSize($screen_w, $menu_h);
+}
+
+#menu_left, #menu_right {
+    @include absoluteSize($menu_item_w, $logo_s);
+    @include vertical-flexbox;
+    float: right;
+    justify-content: center;
+    margin-bottom: 0.1 * $container_h;
+}
+
+.link, a.link {
+    $link_s: $logo_s / 5;
+    $link_w: $menu_item_w * 0.9;
+    @include absoluteSize($link_w, $link_s);
+    @include vertical-flexbox;
+    background-color: $green;
+    font-size: $link_s * 0.5;
+    color: $dark-green;
+    margin: $link_s / 3 auto;
+}
+
+.link:hover {
+    color: $light-green;
+}
+
+.link:active {
+    background-color: $dark-green;
+}
+
+#online_game {
+    opacity: 0.35;
 }
 
 #card {
@@ -131,10 +137,6 @@ h1 {
     text-align: center;
 }
 
-#links {
-    width: 0.7 * $scrnwdth;
-}
-
 h2 {
     font-size: 1.5em;
 }
@@ -143,41 +145,24 @@ h3 {
     font-size: 0.8em;
 }
 
-.link {
-    display: inline-block;
-    width: 0.3 * 100%;
-    text-align: center;
-    font-weight: bold;
-}
-
-.link:hover {
-    $bgcolor: transparentize($dark-green, 0.8);
-    background-color: $bgcolor;
-}
-
-.link:active {
-    $bgcolor: transparentize($dark-green, 0.5);
-    background-color: $bgcolor;
-}
-
-.link:nth-child(2) {
-    $border-color: transparentize($dark-green, 0.2);
-    border-left: 1px solid $border-color;
-    border-right: 1px solid $border-color;
-}
-
 a, a:visited, a:link {
     text-decoration: none;
-    color: inherit;
     cursor: pointer;
 }
 
 #footer {
-    height: 0.1 * $scrnhgt;
-    font-size: 0.05 * $scrnhgt;
-    @include vertical-flexbox;
     @include linear-gradient(75deg, $dark-green, $green);
-    box-shadow: 0px -2px 5px $gray;
-    color: $light-green;
-    text-shadow: 2px 2px 5px $dark-green;
+    @include vertical-flexbox;
+    @include absoluteSize($screen_w, $footer_h);
+    font-size: 0.5 * $footer_h;
+    color: $dark-green;
+    & a, & a:visited, & a:link {
+        color: $dark-green;
+    }
+    & a:hover {
+        color: $light-green;
+    }
+    & a:active {
+        color: $dark-green;
+    }
 }

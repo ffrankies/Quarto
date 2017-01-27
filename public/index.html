@@ -10,39 +10,36 @@
         <!--Separate metas from header stuff-->
         <title>Quarto-Arena</title>
         <link type="text/css" rel="stylesheet" href="style/index.css"/>
+        <script src="scripts/users.js"></script>
         <script src="scripts/header.js"></script>
     </head>
     <!--End of header section-->
     <body>
-        <div id="header" class="largeHeader">
-            <div id="buttons">
-                <a class="button" id="log-in">Log In</a>
-                <a class="button" id="sign-up">Sign Up</a>
-            </div>
-            <div id="logo" class="logoLarge">Q</div>
-            <h1>Quarto-Arena</h1>
+        <div id="header">
+            <!-- <div id="buttons"> -->
+            <a class="button" id="username">Not Logged In</a>
+            <a class="button" id="log-in">Log In</a>
+            <a class="button" id="sign-up">Sign Up</a>
+            <!-- </div> -->
+            <!-- <div id="logo" class="logoLarge">Q</div> -->
         </div>
-        <div id="container" class="largeContainer">
-            <div id="card">
-                <h2>Welcome to the Quarto Arena! This site is still in
-                     development.</h2>
-                <h3>Quarto is a fast-paced, two-player strategic board game,
-                    similar to tic-tac-toe. The game consists of a 4x4 game
-                    board, as well as a common pool of 16 unique pieces.
-                    The game objective of the game is to line up 4 pieces that
-                    have something in common.</h3>
-                <div id="links">
-                    <a class="link" id="startgame">Start Game</a><!--
-                    --><a href="./howto.html" class="link">Instructions</a><!--
-                    --><a href="./leaderboard.html" class="link">
-                        Leaderboards
-                    </a>
+        <div id="container">
+            <h1>Quarto-Arena</h1>
+            <div id="menu">
+                <div id="menu_left">
+                    <a href="./howto.html" class="link">Instructions</a>
+                    <a href="./leaderboard.html" class="link">Leaderboards</a>
+                </div>
+                <div id="logo"></div>
+                <div id="menu_right">
+                     <a class="link" id="local_game">New Local Game</a>
+                     <a class="link" id="online_game">New Online Game</a>
                 </div>
             </div>
         </div>
         <div id="newGameDiv" class="notVisible">
             <div id="types">
-                <div id="hotSeat" class="gameType">
+                <div id="local_game_ops" class="innerOps">
                     <h4>Hot Seat</h4>
                     <hr/>
                     <h5>Player 1</h5>
@@ -51,36 +48,42 @@
                     <h5>Player 2</h5>
                     <input type="text" name="p2name" value="Anakin Dogwalker" />
                     <hr />
-                    <input type="submit" value="Start" id="hotseatStart" />
+                    <input type="submit" value="Start" id="local_game_start" />
                 </div>
             </div>
             <div class="cancel">Cancel</div>
         </div>
         <div id="logInDiv" class="notVisible">
             <div id="logIn" class="auth">
-                <h4>Log In</h4>
-                <hr/>
-                <h5>Username</h5>
-                <input type="text" name="logInUname" value="Darth Cat"/>
-                <h5>Password</h5>
-                <input type="password" name="logInPwd" value="0123abcd"/>
-                <div id="logInError"></div>
-                <hr/>
-                <input type="submit" value="Done" id="logInDone" />
+                <div class="inner_ops">
+                    <h4>Log In</h4>
+                    <hr/>
+                    <h5>Username</h5>
+                    <input type="text" name="logInUname" value="Darth Cat"/>
+                    <hr/>
+                    <h5>Password</h5>
+                    <input type="password" name="logInPwd" value="0123abcd"/>
+                    <div id="logInError" class="error_message"></div>
+                    <hr/>
+                    <input type="submit" value="Done" id="logInDone" />
+                </div>
             </div>
             <div class="cancel">Cancel</div>
         </div>
         <div id="signUpDiv" class="notVisible">
             <div id="signUp" class="auth">
-                <h4>Sign UP</h4>
-                <hr/>
-                <h5>Username</h5>
-                <input type="text" name="signUpUname" value="Darth Cat"/>
-                <h5>Password</h5>
-                <input type="password" name="signUpPwd" value="0123abcd"/>
-                <div id="signUpError"></div>
-                <hr/>
-                <input type="submit" value="Done" id="signUpDone" />
+                <div id="inner_ops">
+                    <h4>Sign UP</h4>
+                    <hr/>
+                    <h5>Username</h5>
+                    <input type="text" name="signUpUname" value="Darth Cat"/>
+                    <hr/>
+                    <h5>Password</h5>
+                    <input type="password" name="signUpPwd" value="0123abcd"/>
+                    <div id="signUpError" class="error_message"></div>
+                    <hr/>
+                    <input type="submit" value="Done" id="signUpDone" />
+                </div>
             </div>
             <div class="cancel">Cancel</div>
         </div>

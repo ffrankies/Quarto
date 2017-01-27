@@ -1,6 +1,17 @@
 $green: #21CC43;
 $light-green: #DCFEED;
+$mid-green: #76EB87;
 $dark-green: #125521;
 $white: #CCCCCC;
 $black: #111111;
 $gray: #555555;
+
+@font-face {
+    font-family: 'Aldo';
+    src: url("../fonts/Aldo PC.ttf");
+}
+
+@font-face {
+    font-family: 'Blanche';
+    src: url("../fonts/Blanche de la Fontaine.ttf");
+}

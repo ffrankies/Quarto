@@ -1,9 +1,15 @@
+/******************************************************************************
+ * Shrinks the header upon scrolling.
+ * Author: Frank Wanye
+ * Date: 01/02/2016
+ *****************************************************************************/
+
 "use strict";
 
 /**
  * Sets up a hotSeat game.
  */
-function processHotSeat() {
+function process_local_game() {
     var player1Name = document.querySelector('input[name="p1name"]').value;
     if (player1Name == null || player1Name == "") {
         player1Name = "Player 1";
@@ -32,8 +38,8 @@ function hideParent(div) {
  * Allows a New Game to be set up and started.
  */
 function newGame() {
-    var startGame = document.getElementById("startgame");
-    startGame.onclick = function() {
+    var local_game = document.getElementById("local_game");
+    local_game.onclick = function() {
         document.getElementById("newGameDiv").className = "visible";
     };
     var logIn = document.getElementById("log-in");
@@ -49,9 +55,9 @@ function newGame() {
         var button = cancelButtons[i];
         button.onclick = hideParent(button);
     }
-    var hotSeat = document.getElementById("hotseatStart");
+    var hotSeat = document.getElementById("local_game_start");
     hotSeat.onclick = function() {
-        processHotSeat();
+        process_local_game();
     };
 };
 

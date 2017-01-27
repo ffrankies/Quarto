@@ -7,15 +7,15 @@ var db = mongoose.connection;
 /**
  * Adds an entry for a single player to the Player collection
  */
-exports.addPlayer = function(req, res, next) {
+exports.addPlayer = function(req, res) {
     var name = req.body.username;
-    Player.create( { username: name }, function(err, next) {
+    Player.create( { username: name }, function(err) {
         if (err) {
             console.log(err);
             return res.status(500).json(
                 {
                     success: false,
-                    message: "Registration failure - adding player",
+                    message: err.message,
                     error: err
                 }
             );

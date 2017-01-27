@@ -8,7 +8,7 @@
     background: linear-gradient($angle, $color1, $color2);
 }
 
-@mixin checkerboard($color1, $color2) {
+@mixin checkerboard($color1, $color2, $size) {
     background-color: $color1;
     background-image: -webkit-linear-gradient(
         45deg, $color2 25%, transparent 25%, transparent 75%,
@@ -34,7 +34,7 @@
         linear-gradient(
         -45deg, $color2 25%, transparent 25%, transparent 75%,
         $color2 75%, $color2);
-    background-size: 35% 35%;
+    background-size: $size $size;
     background-position: center;
 }
 
