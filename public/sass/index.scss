@@ -8,14 +8,6 @@
 $screen_w: 100vw;
 $screen_h: 100vh;
 
-$hdrhght: 0.8 * $screen_h;
-$smallhdrhght: 0.2 * $screen_h;
-$h1hght: 0.5 * 0.73 * $screen_h;
-$h1fontsize: 0.6 * $h1hght;
-$smallh1hght: 0.13 * $screen_h;
-$smallh1fontsize: 0.7 * $smallh1hght;
-$cardheight: $hdrhght * 0.8;
-
 $header_h: 0.1 * $screen_h;
 $container_h: 0.84 * $screen_h;
 $footer_h: 0.06 * $screen_h;
@@ -126,17 +118,6 @@ $menu_item_w: 0.30 * $screen_w;
     opacity: 0.35;
 }
 
-#card {
-    @include absoluteSize(80%, $cardheight);
-    @include vertical-flexbox;
-    $bgcolor: transparentize($light-green, 0.2);
-    background-color: $bgcolor;
-    box-shadow: 0px 0px 5px $gray;
-    font-size: 2em;
-    color: $dark-green;
-    text-align: center;
-}
-
 h2 {
     font-size: 1.5em;
 }
@@ -164,5 +145,77 @@ a, a:visited, a:link {
     }
     & a:active {
         color: $dark-green;
+    }
+}
+
+@media screen and (orientation: portrait) {
+
+    $header_h: 0.06 * $screen_h;
+    $container_h: 0.9 * $screen_h;
+    $footer_h: 0.04 * $screen_h;
+
+    #header {
+        @include absoluteSize($screen_w, $header_h);
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        -webkit-align-content: center;
+        align-content: center;
+    }
+    .button {
+        @include vertical-flexbox;
+        @include absoluteSize(0.3 * $screen_w, 0.7 * $header_h);
+        font-size: 0.35 * $header_h;
+        color: $light-green;
+    }
+
+    #container {
+        @include vertical-flexbox;
+        @include absoluteSize($screen_w, $container_h);
+    }
+
+    h1 {
+        @include absoluteSize($screen_w, 0.10 * $container_h);
+        font-size: 0.15 * $screen_w;
+    }
+
+    $logo_s: 0.5 * $screen_w;
+    $menu_h: 0.9 * $container_h;
+    $menu_item_w: 0.80 * $screen_w;
+
+    #menu_left, #menu_right {
+        @include absoluteSize($screen_w, 0.3 * $menu_h);
+        @include vertical-flexbox;
+        justify-content: center;
+        margin-bottom: 0.1 * $container_h;
+        margin: 0;
+    }
+
+    #menu_left {
+        justify-content: flex-end;
+    }
+
+    #menu_right {
+        justify-content: flex-start;
+    }
+
+    #menu {
+        @include absoluteSize($screen_w, $menu_h);
+        @include vertical-flexbox;
+    }
+
+    .link, a.link {
+        $link_s: 0.3 * $menu_h / 3.5;
+        $link_w: $menu_item_w;
+        @include absoluteSize($link_w, $link_s);
+        @include vertical-flexbox;
+        background-color: $green;
+        font-size: $link_s * 0.5;
+        color: $dark-green;
+        margin: $link_s / 4 auto;
+    }
+
+    #footer {
+        @include absoluteSize($screen_w, $footer_h);
+        font-size: 0.5 * $footer_h;
     }
 }
