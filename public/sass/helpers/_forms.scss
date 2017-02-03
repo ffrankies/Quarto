@@ -143,3 +143,17 @@ $radiosize: 5%;
 //     background-color: transparent;
 //     font-size: 0.8 * 0.08 * $optionsHeight;
 // }
+@media screen and (orientation: portrait) {
+    #types, #logIn, #signUp {
+        @include absoluteSize(75%, $optionsHeight);
+        @include vertical-flexbox;
+        background-color: $light-green;
+        color: $dark-green;
+    }
+    .cancel {
+        @include absoluteSize(75%, 0.1 * $optionsHeight);
+    }
+    .inner_ops {
+        @include absoluteSize(75%, 0.9 * $optionsHeight);
+    }
+}

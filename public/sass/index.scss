@@ -161,6 +161,7 @@ a, a:visited, a:link {
         -webkit-align-content: center;
         align-content: center;
     }
+
     .button {
         @include vertical-flexbox;
         @include absoluteSize(0.3 * $screen_w, 0.7 * $header_h);
@@ -174,8 +175,9 @@ a, a:visited, a:link {
     }
 
     h1 {
-        @include absoluteSize($screen_w, 0.10 * $container_h);
-        font-size: 0.15 * $screen_w;
+        $h1_s: 0.10 * $container_h;
+        @include absoluteSize($screen_w, $h1_s);
+        font-size: 0.6 * $h1_s;
     }
 
     $logo_s: 0.5 * $screen_w;
