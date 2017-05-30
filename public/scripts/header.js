@@ -41,6 +41,31 @@ function newGame() {
     var local_game = document.getElementById("local_game");
     local_game.onclick = function() {
         document.getElementById("newGameDiv").className = "visible";
+        if (loggedIn == false) {
+            var ajax = setUpAjax()
+            if (ajax == null) {
+                console.log("Incompatible browser.");
+                return;
+            }
+            ajax.open("GET", "/resources/names.json");
+            ajax.setRequestHeader("Content-type", "application/json");
+            ajax.onreadystatechange = function() {
+                if (ajax.readyState == 4) {
+                    var response = ajax.responseText;
+                    console.log(response);
+                    response = JSON.parse(response);
+                    var p1nameDiv = document.getElementById("local_game_p1name")
+                    var p2nameDiv = document.getElementById("local_game_p2name")
+                    var namesLen = response.human.length
+                    var random1 = Math.floor(Math.random() * namesLen)
+                    var random2 = Math.floor(Math.random() * namesLen)
+                    p1nameDiv.value = response.human[random1]
+                    p2nameDiv.value = response.human[random2]
+                }
+            };
+            console.log("Sending ajax request for names.")
+            ajax.send();
+        }
     };
     var logIn = document.getElementById("log-in");
     logIn.onclick = function() {
