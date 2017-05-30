@@ -1,0 +1,9 @@
+{
+    "human" : ["Herp", "Derp", "Herpina", "Derpina", "James Bond", "Han Solo",
+               "Jack Sparrow", "Hannibal Lecter", "Gandalf", "Forrest Gump",
+               "Fate", "The Lady", "C.M.O.T. Dibbler", "D.M.H. Dhblah",
+               "Reg Shoe", "Binky", "Rob Anybody", "Mightily Oats",
+               "Trevor Likely"],
+    "ai" : ["Hex", "R2D2", "Sonny", "Bubo", "Mecha Godzilla", "Tin Man",
+            "Terminator", "Wall-E", "C-3PO", "HAL"]
+}
