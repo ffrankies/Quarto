@@ -59,7 +59,6 @@
 }
 
 @mixin shape($color, $size, $shape, $outline) {
-    $color: transparentize($color, 0.4);
     background-color: $color;
     @if $size == big {
         @include absoluteSize(75%, 75%);

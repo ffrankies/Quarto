@@ -1,0 +1,54 @@
+$header_h: 0.1 * $screen_h;
+
+#header {
+    @include linear-gradient(105deg, $dark-green, $green);
+    @include absoluteSize($screen_w, $header_h);
+    @include horizontal-flexbox;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
+    //box-shadow: 0px 2px 5px $gray;
+    transition: all 1s;
+    width: $screen_w;
+}
+
+.button {
+    @include vertical-flexbox;
+    @include absoluteSize(0.1 * $screen_w, 0.7 * $header_h);
+    font-size: 0.35 * $header_h;
+    color: $light-green;
+}
+
+#log-in:hover, #sign-up:hover {
+    color: $dark-green;
+}
+
+#log-in:active, #sign-up:active {
+    color: $mid-green;
+}
+
+#username {
+    @include absoluteSize(0.3 * $screen_w, 0.7 * $header_h);
+}
+
+@media screen and (orientation: portrait) {
+
+    $header_h: 0.06 * $screen_h;
+
+    #header {
+        @include absoluteSize($screen_w, $header_h);
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        -webkit-align-content: center;
+        align-content: center;
+    }
+
+    .button {
+        @include vertical-flexbox;
+        @include absoluteSize(0.3 * $screen_w, 0.7 * $header_h);
+        font-size: 0.35 * $header_h;
+        color: $light-green;
+    }
+
+}

@@ -1,0 +1,99 @@
+.WBRO {
+    @include shape(white, big, circle, true);
+}
+
+.WBRN {
+    @include shape(white, big, circle, false);
+}
+
+.WBQO {
+    @include shape(white, big, square, true);
+}
+
+.WBQN {
+    @include shape(white, big, square, false);
+}
+
+.WSRO {
+    @include shape(white, small, circle, true);
+}
+
+.WSRN {
+    @include shape(white, small, circle, false);
+}
+
+.WSQO {
+    @include shape(white, small, square, true);
+}
+
+.WSQN {
+    @include shape(white, small, square, false);
+}
+
+.GBRO {
+    @include shape($green, big, circle, true);
+}
+
+.GBRN {
+    @include shape($green, big, circle, false);
+}
+
+.GBQO {
+    @include shape($green, big, square, true);
+}
+
+.GBQN {
+    @include shape($green, big, square, false);
+}
+
+.GSRO {
+    @include shape($green, small, circle, true);
+}
+
+.GSRN {
+    @include shape($green, small, circle, false);
+}
+
+.GSQO {
+    @include shape($green, small, square, true);
+}
+
+.GSQN {
+    @include shape($green, small, square, false);
+}
+
+.selected, .selected:hover, .selected:active {
+    $bgcolor: transparentize($dark-green, 0.4);
+    background-color: $bgcolor;
+    box-shadow: none;
+    cursor: default;
+}
+
+.piece, {
+    @include absoluteSize($pieceinteriorsize, $pieceinteriorsize);
+    @include vertical-flexbox;
+    margin: $piecesize * 0.03;
+    border-radius: 10px;
+    background-color: $mid-green;
+    cursor: pointer;
+    //box-shadow: 2px 2px 5px $gray;
+}
+
+.piece:hover, .cell:hover {
+    //$hovercolor: transparentize($white, 0.6);
+    // background-color: white;
+    box-shadow: 2px 2px 5px $gray;
+}
+
+.piece:active, .cell:active {
+    $hovercolor: transparentize($dark-green, 0.6);
+    background-color: $hovercolor;
+    box-shadow: -2px -2px 5px $gray;
+}
+
+#selectedpiece:hover, #selectedpiece:active {
+    //background-color: transparent;
+    //box-shadow: 2px 2px 5px $gray;
+    background-color: $mid-green;
+    cursor: default;
+}

@@ -3,14 +3,17 @@
 @import "helpers/functions";
 @import "helpers/forms";
 @import "helpers/anims";
-@import "helpers/logo";
 
 $screen_w: 100vw;
 $screen_h: 100vh;
 
+// May not need some of these later
 $header_h: 0.1 * $screen_h;
 $container_h: 0.84 * $screen_h;
-$footer_h: 0.06 * $screen_h;
+$logo_s: 0.56 * $container_h;
+
+@import "parts/header";
+@import "parts/biglogo";
 
 * {
     margin: 0;
@@ -22,38 +25,6 @@ body {
     background-color: $light-green;
     overflow: hidden;
     //@include crisscross(white, $light-green, $dark-green);
-}
-
-#header {
-    @include linear-gradient(105deg, $dark-green, $green);
-    @include absoluteSize($screen_w, $header_h);
-    @include horizontal-flexbox;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
-    -webkit-align-content: flex-end;
-    align-content: flex-end;
-    //box-shadow: 0px 2px 5px $gray;
-    transition: all 1s;
-    width: $screen_w;
-}
-
-.button {
-    @include vertical-flexbox;
-    @include absoluteSize(0.1 * $screen_w, 0.7 * $header_h);
-    font-size: 0.35 * $header_h;
-    color: $light-green;
-}
-
-#log-in:hover, #sign-up:hover {
-    color: $dark-green;
-}
-
-#log-in:active, #sign-up:active {
-    color: $mid-green;
-}
-
-#username {
-    @include absoluteSize(0.3 * $screen_w, 0.7 * $header_h);
 }
 
 #container {
@@ -131,43 +102,11 @@ a, a:visited, a:link {
     cursor: pointer;
 }
 
-#footer {
-    @include linear-gradient(75deg, $dark-green, $green);
-    @include vertical-flexbox;
-    @include absoluteSize($screen_w, $footer_h);
-    font-size: 0.5 * $footer_h;
-    color: $dark-green;
-    & a, & a:visited, & a:link {
-        color: $dark-green;
-    }
-    & a:hover {
-        color: $light-green;
-    }
-    & a:active {
-        color: $dark-green;
-    }
-}
-
 @media screen and (orientation: portrait) {
 
-    $header_h: 0.06 * $screen_h;
+    // $header_h: 0.06 * $screen_h;
     $container_h: 0.9 * $screen_h;
     $footer_h: 0.04 * $screen_h;
-
-    #header {
-        @include absoluteSize($screen_w, $header_h);
-        -webkit-justify-content: space-around;
-        justify-content: space-around;
-        -webkit-align-content: center;
-        align-content: center;
-    }
-
-    .button {
-        @include vertical-flexbox;
-        @include absoluteSize(0.3 * $screen_w, 0.7 * $header_h);
-        font-size: 0.35 * $header_h;
-        color: $light-green;
-    }
 
     #container {
         @include vertical-flexbox;
@@ -215,9 +154,6 @@ a, a:visited, a:link {
         color: $dark-green;
         margin: $link_s / 4 auto;
     }
-
-    #footer {
-        @include absoluteSize($screen_w, $footer_h);
-        font-size: 0.5 * $footer_h;
-    }
 }
+
+@import "parts/footer";

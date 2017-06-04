@@ -1,0 +1,30 @@
+$footer_h: 0.06 * $screen_h;
+$screen_w: 100vw;
+
+#footer {
+    @include linear-gradient(75deg, $dark-green, $green);
+    @include vertical-flexbox;
+    @include absoluteSize($screen_w, $footer_h);
+    font-size: 0.5 * $footer_h;
+    color: $dark-green;
+    & a, & a:visited, & a:link {
+        color: $dark-green;
+    }
+    & a:hover {
+        color: $light-green;
+    }
+    & a:active {
+        color: $dark-green;
+    }
+}
+
+@media screen and (orientation: portrait) {
+
+    $footer_h: 0.04 * $screen_h;
+
+    #footer {
+        @include absoluteSize($screen_w, $footer_h);
+        font-size: 0.5 * $footer_h;
+    }
+    
+}
